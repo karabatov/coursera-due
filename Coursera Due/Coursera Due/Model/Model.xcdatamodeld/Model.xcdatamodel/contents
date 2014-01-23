@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="homeLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="sessionId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Enrollment" inverseName="sessionId" inverseEntity="Enrollment" syncable="YES"/>
+        <relationship name="topicId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="topicId" inverseEntity="Topic" syncable="YES"/>
+    </entity>
+    <entity name="Enrollment" representedClassName="Enrollment" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isSignatureTrack" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="startStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courseId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="courseId" inverseEntity="Topic" syncable="YES"/>
+        <relationship name="sessionId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="sessionId" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="Topic" representedClassName="Topic" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="largeIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courseId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Enrollment" inverseName="courseId" inverseEntity="Enrollment" syncable="YES"/>
+        <relationship name="topicId" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="topicId" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Enrollment" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Topic" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
