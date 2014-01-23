@@ -1,5 +1,5 @@
 *.swp
 .DS_Store
 CDOAuthConstants.m
-Pods
+Pods/
 UserInterfaceState.xcuserstate
