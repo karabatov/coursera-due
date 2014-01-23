@@ -1,3 +1,4 @@
 platform :ios, '7.0'
 pod 'RestKit', '~> 0.22.0'
 pod 'AFOAuth2Client', '~> 0.1.2'
+pod 'MXLCalendarManager', :path => '~/Dropbox/Documents/Programming/iOS/MXLCalendarManager', :branch => 'master'
