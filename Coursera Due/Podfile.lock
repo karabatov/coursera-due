@@ -27,8 +27,8 @@ PODS:
   - TransitionKit (2.0.0)
 
 DEPENDENCIES:
-  - AFOAuth2Client
-  - RestKit
+  - AFOAuth2Client (~> 0.1.2)
+  - RestKit (~> 0.22.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
