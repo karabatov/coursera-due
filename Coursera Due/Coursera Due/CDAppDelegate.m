@@ -45,6 +45,7 @@
 
     [[CDNetworkDataLoader sharedLoader] getPublicCourses];
     [[CDNetworkDataLoader sharedLoader] getMyEnrollments];
+    [[CDNetworkDataLoader sharedLoader] getDeadlines];
 
     return YES;
 }

@@ -9,6 +9,7 @@
 #import "CDNetworkDataLoader.h"
 #import "CDOAuthConstants.h"
 #import "AFOAuth2Client/AFOAuth2Client.h"
+#import "MXLCalendarManager/MXLCalendarManager.h"
 
 static CDNetworkDataLoader *sharedLoader = nil;
 
@@ -147,7 +148,7 @@ static CDNetworkDataLoader *sharedLoader = nil;
 - (void)getPublicCourses
 {
     [self.maestroManager getObjectsAtPath:@"/maestro/api/topic/list2" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        NSLog(@"Mapping Result: %@", mappingResult.array);
+        //NSLog(@"Mapping Result: %@", mappingResult.array);
     } failure:nil];
 
 }
@@ -180,6 +181,21 @@ static CDNetworkDataLoader *sharedLoader = nil;
                                         failure:^(NSError *error) {
                                             NSLog(@"Error: %@", error);
                                         }];
+}
+
+- (void)getDeadlines
+{
+    // Example link: https://class.coursera.org/crypto-009/api/course/calendar
+    // Example link: https://class.coursera.org/circuits-003/api/course/calendar
+
+    NSURL *url = [NSURL URLWithString:@"https://class.coursera.org/crypto-009/api/course/calendar"];
+    MXLCalendarManager *calendarManager = [[MXLCalendarManager alloc] init];
+    [calendarManager scanICSFileAtRemoteURL:url withCompletionHandler:^(MXLCalendar *calendar, NSError *error) {
+        for (MXLCalendarEvent *event in calendar.events) {
+            NSLog(@"Calendar event uid, summary: %@ — %@", event.eventUniqueID, event.eventSummary);
+        }
+    }];
+
 }
 
 @end

@@ -31,5 +31,6 @@
 - (id)initWithCoursera;
 - (void)getPublicCourses;
 - (void)getMyEnrollments;
+- (void)getDeadlines;
 
 @end

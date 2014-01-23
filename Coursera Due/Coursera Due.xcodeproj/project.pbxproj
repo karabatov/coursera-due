@@ -30,6 +30,7 @@
 		D1B3CDB2189006DF00613DA7 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB1189006DF00613DA7 /* Course.m */; };
 		D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */; };
 		D1B3CDB81891551300613DA7 /* CDNetworkDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB71891551300613DA7 /* CDNetworkDataLoader.m */; };
+		D1B3CDBA1891BE6200613DA7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CDB91891BE6200613DA7 /* EventKit.framework */; };
 		E92C3C5EA2434FBBA8A907E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD4394F686949B2BD0B9FD8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOAuthConstants.m; sourceTree = "<group>"; };
 		D1B3CDB61891551300613DA7 /* CDNetworkDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkDataLoader.h; sourceTree = "<group>"; };
 		D1B3CDB71891551300613DA7 /* CDNetworkDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNetworkDataLoader.m; sourceTree = "<group>"; };
+		D1B3CDB91891BE6200613DA7 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B3CDBA1891BE6200613DA7 /* EventKit.framework in Frameworks */,
 				D1B3CD8A188FF42400613DA7 /* MobileCoreServices.framework in Frameworks */,
 				D1B3CD88188FF41400613DA7 /* SystemConfiguration.framework in Frameworks */,
 				D123BDFF188FBD38004F2839 /* CoreGraphics.framework in Frameworks */,
@@ -131,6 +134,7 @@
 		D123BDFB188FBD38004F2839 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1B3CDB91891BE6200613DA7 /* EventKit.framework */,
 				D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */,
 				D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */,
 				D123BDFC188FBD38004F2839 /* Foundation.framework */,
