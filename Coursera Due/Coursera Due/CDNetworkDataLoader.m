@@ -10,6 +10,8 @@
 #import "CDOAuthConstants.h"
 #import "AFOAuth2Client/AFOAuth2Client.h"
 #import "MXLCalendarManager/MXLCalendarManager.h"
+#import "Event.h"
+#import "Course.h"
 
 static CDNetworkDataLoader *sharedLoader = nil;
 
@@ -189,14 +191,116 @@ static CDNetworkDataLoader *sharedLoader = nil;
     // Example link: https://class.coursera.org/crypto-009/api/course/calendar
     // Example link: https://class.coursera.org/circuits-003/api/course/calendar
 
-    NSURL *url = [NSURL URLWithString:@"https://class.coursera.org/crypto-009/api/course/calendar"];
-    MXLCalendarManager *calendarManager = [[MXLCalendarManager alloc] init];
-    [calendarManager scanICSFileAtRemoteURL:url withCompletionHandler:^(MXLCalendar *calendar, NSError *error) {
-        for (MXLCalendarEvent *event in calendar.events) {
-            NSLog(@"Calendar event uid, summary: %@ — %@", event.eventUniqueID, event.eventSummary);
-        }
-    }];
+    NSManagedObjectContext *bgMOC = [[RKManagedObjectStore defaultStore] newChildManagedObjectContextWithConcurrencyType:NSPrivateQueueConcurrencyType tracksChanges:YES];
+    NSFetchRequest *courseFetchRequest = [[NSFetchRequest alloc] init];
+    [courseFetchRequest setEntity:
+     [NSEntityDescription entityForName:@"Course" inManagedObjectContext:bgMOC]];
+    [courseFetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(homeLink != nil) && (sessionId) != nil"]];
+    NSError *error;
+    NSArray *coursesMatching = [bgMOC executeFetchRequest:courseFetchRequest error:&error];
 
+    for (Course *course in coursesMatching) {
+        NSLog(@"--------- In coursesMatching");
+        NSURL *url = [[NSURL URLWithString:course.homeLink] URLByAppendingPathComponent:@"api/course/calendar"];
+        NSLog(@"course homeLink: %@", course.homeLink);
+        MXLCalendarManager *calendarManager = [[MXLCalendarManager alloc] init];
+        [calendarManager scanICSFileAtRemoteURL:url withCompletionHandler:^(MXLCalendar *calendar, NSError *error) {
+            if (!error) {
+                //NSLog(@"Calendar event uid, summary: %@ — %@", event.eventUniqueID, event.eventSummary);
+
+                // As in https://developer.apple.com/library/mac/documentation/cocoa/conceptual/CoreData/Articles/cdImporting.html
+
+                // Get the events to parse in sorted order
+                NSMutableArray *eventUIds = [[NSMutableArray alloc] init];
+                for (MXLCalendarEvent *event in calendar.events) {
+                    [eventUIds addObject:event.eventUniqueID];
+                }
+                NSArray *eventIds = [eventUIds sortedArrayUsingSelector:@selector(compare:)];
+
+                NSSortDescriptor *sortDescriptor =
+                [NSSortDescriptor sortDescriptorWithKey:@"eventUniqueID"
+                                              ascending:YES
+                                               selector:@selector(compare:)];
+                NSArray *calendarEventsSorted = [calendar.events sortedArrayUsingDescriptors:@[sortDescriptor]];
+
+                // create the fetch request to get all Events matching the IDs
+                NSManagedObjectContext *aMOC = [[RKManagedObjectStore defaultStore] newChildManagedObjectContextWithConcurrencyType:NSPrivateQueueConcurrencyType tracksChanges:YES];
+                NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+                [fetchRequest setEntity:
+                 [NSEntityDescription entityForName:@"Event" inManagedObjectContext:aMOC]];
+                [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(id IN %@)", eventIds]];
+
+                // Make sure the results are sorted as well.
+                [fetchRequest setSortDescriptors:
+                 @[ [[NSSortDescriptor alloc] initWithKey: @"id" ascending:YES] ]];
+                // Execute the fetch.
+                NSError *error;
+                NSArray *eventsMatching = [aMOC executeFetchRequest:fetchRequest error:&error];
+
+                int i = 0;
+                int j = 0;
+
+                while ((i < [eventIds count]) && (j <= [eventsMatching count])){
+
+                    NSString *eventId = [eventIds objectAtIndex:i];
+
+                    Event *newEvt = nil;
+
+                    if ([eventsMatching count] != 0)
+                        newEvt = [eventsMatching objectAtIndex:j];
+
+                    if (![eventId isEqualToString:newEvt.id]){
+
+                        //Insert new Employee entity into context
+                        newEvt = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:aMOC];
+                        newEvt.id = eventId;
+                        MXLCalendarEvent *event = [calendarEventsSorted objectAtIndex:i];
+                        newEvt.startDate = event.eventStartDate;
+                        newEvt.endDate = event.eventEndDate;
+                        newEvt.createDate = event.eventCreatedDate;
+                        newEvt.lastModifiedDate = event.eventLastModifiedDate;
+                        newEvt.eventSummary = event.eventSummary;
+                        newEvt.eventDescription = event.eventDescription;
+                        newEvt.eventStatus = event.eventStatus;
+
+                        // Now set the proper Course ID
+                        NSString *courseIdString = [[eventId componentsSeparatedByString:@"|"] objectAtIndex:0];
+                        NSNumber *courseId = [NSNumber numberWithInteger:[courseIdString integerValue]];
+                        NSFetchRequest *courseFetchRequest = [[NSFetchRequest alloc] init];
+                        [courseFetchRequest setEntity:
+                         [NSEntityDescription entityForName:@"Course" inManagedObjectContext:aMOC]];
+                        [courseFetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(id == %@)", courseId]];
+
+                        // Make sure the results are sorted as well.
+                        [courseFetchRequest setSortDescriptors:
+                         @[ [[NSSortDescriptor alloc] initWithKey: @"id" ascending:YES] ]];
+                        // Execute the fetch.
+                        NSError *error;
+                        NSArray *coursesMatching = [aMOC executeFetchRequest:courseFetchRequest error:&error];
+                        for (Course *course in coursesMatching) {
+                            if ([course.id isEqualToNumber:courseId]) {
+                                newEvt.courseId = course;
+                                break;
+                            }
+                        }
+                        NSLog(@"newEvt = %@", newEvt);
+                    }
+                    else {
+                        //We matched eventId to Event so the next iteration
+                        //of this loop should check the next Event object
+                        j++;
+                    }
+                    
+                    //Set any attributes for event that change with each update
+                    
+                    i++;
+                }
+
+                [aMOC save:&error];
+                [aMOC saveToPersistentStore:&error];
+            }
+        }];
+    }
 }
 
 - (void)getDataInBackground

@@ -22,12 +22,13 @@
 		D123BE21188FBD38004F2839 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D123BE00188FBD38004F2839 /* UIKit.framework */; };
 		D123BE29188FBD38004F2839 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D123BE27188FBD38004F2839 /* InfoPlist.strings */; };
 		D123BE2B188FBD38004F2839 /* Coursera_DueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D123BE2A188FBD38004F2839 /* Coursera_DueTests.m */; };
+		D1332A0B189306A1000EA54A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D1332A0A189306A1000EA54A /* Event.m */; };
+		D1367952189324F900B1B0A3 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D1367951189324F900B1B0A3 /* Course.m */; };
 		D1B3CD88188FF41400613DA7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */; };
 		D1B3CD8A188FF42400613DA7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */; };
 		D1B3CD8D188FF74F00613DA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */; };
 		D1B3CDAC189006DE00613DA7 /* Enrollment.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDAB189006DE00613DA7 /* Enrollment.m */; };
 		D1B3CDAF189006DF00613DA7 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDAE189006DF00613DA7 /* Topic.m */; };
-		D1B3CDB2189006DF00613DA7 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB1189006DF00613DA7 /* Course.m */; };
 		D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */; };
 		D1B3CDB81891551300613DA7 /* CDNetworkDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB71891551300613DA7 /* CDNetworkDataLoader.m */; };
 		D1B3CDBA1891BE6200613DA7 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CDB91891BE6200613DA7 /* EventKit.framework */; };
@@ -67,6 +68,10 @@
 		D123BE26188FBD38004F2839 /* Coursera DueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coursera DueTests-Info.plist"; sourceTree = "<group>"; };
 		D123BE28188FBD38004F2839 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D123BE2A188FBD38004F2839 /* Coursera_DueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coursera_DueTests.m; sourceTree = "<group>"; };
+		D1332A09189306A1000EA54A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
+		D1332A0A189306A1000EA54A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
+		D1367950189324F900B1B0A3 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Course.h; path = Model/Course.h; sourceTree = "<group>"; };
+		D1367951189324F900B1B0A3 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Course.m; path = Model/Course.m; sourceTree = "<group>"; };
 		D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D1B3CD8C188FF74F00613DA7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -74,8 +79,6 @@
 		D1B3CDAB189006DE00613DA7 /* Enrollment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enrollment.m; path = Model/Enrollment.m; sourceTree = "<group>"; };
 		D1B3CDAD189006DF00613DA7 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Topic.h; path = Model/Topic.h; sourceTree = "<group>"; };
 		D1B3CDAE189006DF00613DA7 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Topic.m; path = Model/Topic.m; sourceTree = "<group>"; };
-		D1B3CDB0189006DF00613DA7 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Course.h; path = Model/Course.h; sourceTree = "<group>"; };
-		D1B3CDB1189006DF00613DA7 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Course.m; path = Model/Course.m; sourceTree = "<group>"; };
 		D1B3CDB318914BF300613DA7 /* CDOAuthConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOAuthConstants.h; sourceTree = "<group>"; };
 		D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOAuthConstants.m; sourceTree = "<group>"; };
 		D1B3CDB61891551300613DA7 /* CDNetworkDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNetworkDataLoader.h; sourceTree = "<group>"; };
@@ -199,8 +202,10 @@
 			isa = PBXGroup;
 			children = (
 				D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */,
-				D1B3CDB0189006DF00613DA7 /* Course.h */,
-				D1B3CDB1189006DF00613DA7 /* Course.m */,
+				D1367950189324F900B1B0A3 /* Course.h */,
+				D1367951189324F900B1B0A3 /* Course.m */,
+				D1332A09189306A1000EA54A /* Event.h */,
+				D1332A0A189306A1000EA54A /* Event.m */,
 				D1B3CDAD189006DF00613DA7 /* Topic.h */,
 				D1B3CDAE189006DF00613DA7 /* Topic.m */,
 				D1B3CDAA189006DE00613DA7 /* Enrollment.h */,
@@ -343,10 +348,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1B3CDB2189006DF00613DA7 /* Course.m in Sources */,
 				D123BE09188FBD38004F2839 /* main.m in Sources */,
+				D1332A0B189306A1000EA54A /* Event.m in Sources */,
 				D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */,
 				D123BE0D188FBD38004F2839 /* CDAppDelegate.m in Sources */,
+				D1367952189324F900B1B0A3 /* Course.m in Sources */,
 				D1B3CDB81891551300613DA7 /* CDNetworkDataLoader.m in Sources */,
 				D1B3CDAC189006DE00613DA7 /* Enrollment.m in Sources */,
 				D123BE16188FBD38004F2839 /* CDViewController.m in Sources */,

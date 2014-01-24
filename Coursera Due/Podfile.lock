@@ -41,10 +41,10 @@ SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   AFOAuth2Client: 579d6f298b0047dfd5a6eec6ab5b28c01f6b4547
   ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
-  MXLCalendarManager: 4b0a1a910d4d8b7cf576501ec1cb442e1a6ea77a
+  MXLCalendarManager: 8b38a673cd5b5a991fe43acb204ff243cbe78d07
   RestKit: dc107a0aa4f962575ad0385bac5b3c5e4f591f4e
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
   SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
   TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
 
-COCOAPODS: 0.25.0
+COCOAPODS: 0.29.0

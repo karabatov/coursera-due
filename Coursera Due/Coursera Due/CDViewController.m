@@ -12,6 +12,7 @@
 #import "Enrollment.h"
 #import "Topic.h"
 #import "Course.h"
+#import "Event.h"
 
 @interface CDViewController ()
 
@@ -33,6 +34,10 @@
                                              selector:@selector(refreshManagedContext:)
                                                  name:NSManagedObjectContextDidSaveNotification
                                                object:[[RKManagedObjectStore defaultStore] mainQueueManagedObjectContext]];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshManagedContext:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:[[RKManagedObjectStore defaultStore] persistentStoreManagedObjectContext]];
     if (![self.fetchedResultsController performFetch:&error])
     {
         /*
@@ -56,7 +61,10 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Enrollment *enrollment = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = enrollment.courseId.name;
-    cell.detailTextLabel.text = enrollment.sessionId.homeLink;
+    Event *event = (Event *)[enrollment.sessionId.eventId anyObject];
+    if (event != nil) {
+        cell.detailTextLabel.text = event.eventSummary;
+    }
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", cell.textLabel.text, cell.detailTextLabel.text);
 }
 
