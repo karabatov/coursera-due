@@ -29,8 +29,6 @@
 + (void)setSharedLoader:(CDNetworkDataLoader *)loader;
 
 - (id)initWithCoursera;
-- (void)getPublicCourses;
-- (void)getMyEnrollments;
-- (void)getDeadlines;
+- (void)getDataInBackground;
 
 @end

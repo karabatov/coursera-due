@@ -145,14 +145,6 @@ static CDNetworkDataLoader *sharedLoader = nil;
     return self;
 }
 
-- (void)getPublicCourses
-{
-    [self.maestroManager getObjectsAtPath:@"/maestro/api/topic/list2" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        //NSLog(@"Mapping Result: %@", mappingResult.array);
-    } failure:nil];
-
-}
-
 - (void)getMyEnrollments
 {
     // Initialize OAuth2 client for testing purposes
@@ -160,27 +152,36 @@ static CDNetworkDataLoader *sharedLoader = nil;
     NSURL *url = [NSURL URLWithString:@"https://accounts.coursera.org"];
     AFOAuth2Client *oauthClient = [AFOAuth2Client clientWithBaseURL:url clientID:kClientId secret:kClientSecret];
 
-    [oauthClient authenticateUsingOAuthWithPath:@"/oauth2/v1/token"
-                                       username:kClientEmail
-                                       password:kClientPassword
-                                          scope:@"password"
-                                        success:^(AFOAuthCredential *credential) {
-                                            NSLog(@"I have a token! %@", credential.accessToken);
-                                            [AFOAuthCredential storeCredential:credential withIdentifier:oauthClient.serviceProviderIdentifier];
+    void (^oauthSuccessBlock)(AFOAuthCredential*) = ^(AFOAuthCredential *credential) {
+        NSLog(@"I have a token! %@", credential.accessToken);
+        [AFOAuthCredential storeCredential:credential withIdentifier:oauthClient.serviceProviderIdentifier];
 
-                                            // Setup authorization for Enrollments
+        // Setup authorization for Enrollments
 
-                                            [self.enrollmentManager.HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", credential.accessToken]];
+        [self.enrollmentManager.HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", credential.accessToken]];
 
-                                            // Execute operation
+        // Perform request
 
-                                            RKObjectRequestOperation *operation = [self.enrollmentManager appropriateObjectRequestOperationWithObject:nil method:RKRequestMethodGET path:@"/api/users/v1/me/enrollments" parameters:nil];
-                                            [self.enrollmentManager enqueueObjectRequestOperation:operation];
+        void (^oroSuccessBlock)(RKObjectRequestOperation*, RKMappingResult*) = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+            [self performSelectorInBackground:@selector(getDeadlines) withObject:nil];
+        };
+        [self.enrollmentManager getObjectsAtPath:@"/api/users/v1/me/enrollments"
+                                      parameters:nil
+                                         success:oroSuccessBlock
+                                         failure:nil];
+    };
 
-                                        }
-                                        failure:^(NSError *error) {
-                                            NSLog(@"Error: %@", error);
-                                        }];
+    dispatch_queue_t gcdBackgroundQueue = dispatch_queue_create("GCDBkgrQueue", NULL);
+    dispatch_async(gcdBackgroundQueue, ^(void){
+        [oauthClient authenticateUsingOAuthWithPath:@"/oauth2/v1/token"
+                                           username:kClientEmail
+                                           password:kClientPassword
+                                              scope:@"password"
+                                            success:oauthSuccessBlock
+                                            failure:^(NSError *error) {
+                                                NSLog(@"Error: %@", error);
+                                            }];
+    });
 }
 
 - (void)getDeadlines
@@ -196,6 +197,23 @@ static CDNetworkDataLoader *sharedLoader = nil;
         }
     }];
 
+}
+
+- (void)getDataInBackground
+{
+    // Get & parse Courses and Topics first
+    dispatch_queue_t gcdBackgroundQueue = dispatch_queue_create("GCDBkgrQueue", NULL);
+    dispatch_async(gcdBackgroundQueue, ^(void){
+        void (^oroSuccessBlock)(RKObjectRequestOperation*, RKMappingResult*) = ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+            //NSLog(@"Mapping Result: %@", mappingResult.array);
+            // Now get & parse Enrollments
+            [self getMyEnrollments];
+        };
+        [self.maestroManager getObjectsAtPath:@"/maestro/api/topic/list2"
+                                   parameters:nil
+                                      success:oroSuccessBlock
+                                      failure:nil];
+    });
 }
 
 @end

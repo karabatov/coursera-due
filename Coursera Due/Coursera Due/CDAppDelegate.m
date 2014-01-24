@@ -43,9 +43,7 @@
 
     // Get data
 
-    [[CDNetworkDataLoader sharedLoader] getPublicCourses];
-    [[CDNetworkDataLoader sharedLoader] getMyEnrollments];
-    [[CDNetworkDataLoader sharedLoader] getDeadlines];
+    [[CDNetworkDataLoader sharedLoader] getDataInBackground];
 
     return YES;
 }

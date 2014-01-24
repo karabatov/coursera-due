@@ -33,11 +33,6 @@
                                              selector:@selector(refreshManagedContext:)
                                                  name:NSManagedObjectContextDidSaveNotification
                                                object:[[RKManagedObjectStore defaultStore] mainQueueManagedObjectContext]];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refreshManagedContext:)
-                                                 name:NSManagedObjectContextDidSaveNotification
-                                               object:[[RKManagedObjectStore defaultStore] persistentStoreManagedObjectContext]];
-
     if (![self.fetchedResultsController performFetch:&error])
     {
         /*
@@ -56,7 +51,6 @@
     NSLog(@"Notification received: %@", notification.userInfo);
     NSError *error;
     [self.fetchedResultsController performFetch:&error];
-    [self.tableView reloadData];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
