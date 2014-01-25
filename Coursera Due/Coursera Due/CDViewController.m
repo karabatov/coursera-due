@@ -59,12 +59,9 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Enrollment *enrollment = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = enrollment.courseId.name;
-    Event *event = (Event *)[enrollment.sessionId.eventId anyObject];
-    if (event != nil) {
-        cell.detailTextLabel.text = event.eventSummary;
-    }
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = event.eventSummary;
+    cell.detailTextLabel.text = [event.endDate description];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", cell.textLabel.text, cell.detailTextLabel.text);
 }
 
@@ -116,7 +113,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [[RKManagedObjectStore defaultStore] newChildManagedObjectContextWithConcurrencyType:NSMainQueueConcurrencyType tracksChanges:YES];
     self.managedObjectContext = managedObjectContext;
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Enrollment" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
 
     // Set the batch size to a suitable number.
@@ -125,6 +122,9 @@
     // Sort using the startDate property.
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
     [fetchRequest setSortDescriptors:@[sortDescriptor ]];
+
+    // Filter
+    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@)", [[NSDate alloc] init]]];
 
     // Do not group results into sections
     _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
