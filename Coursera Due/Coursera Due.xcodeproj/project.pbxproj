@@ -24,6 +24,8 @@
 		D123BE2B188FBD38004F2839 /* Coursera_DueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D123BE2A188FBD38004F2839 /* Coursera_DueTests.m */; };
 		D1332A0B189306A1000EA54A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D1332A0A189306A1000EA54A /* Event.m */; };
 		D1367952189324F900B1B0A3 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D1367951189324F900B1B0A3 /* Course.m */; };
+		D13679551896DFED00B1B0A3 /* CDPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13679541896DFED00B1B0A3 /* CDPageContentViewController.m */; };
+		D13679581896E0D500B1B0A3 /* CDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13679571896E0D500B1B0A3 /* CDRootViewController.m */; };
 		D1B3CD88188FF41400613DA7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */; };
 		D1B3CD8A188FF42400613DA7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */; };
 		D1B3CD8D188FF74F00613DA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */; };
@@ -72,6 +74,10 @@
 		D1332A0A189306A1000EA54A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
 		D1367950189324F900B1B0A3 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Course.h; path = Model/Course.h; sourceTree = "<group>"; };
 		D1367951189324F900B1B0A3 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Course.m; path = Model/Course.m; sourceTree = "<group>"; };
+		D13679531896DFED00B1B0A3 /* CDPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPageContentViewController.h; sourceTree = "<group>"; };
+		D13679541896DFED00B1B0A3 /* CDPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPageContentViewController.m; sourceTree = "<group>"; };
+		D13679561896E0D500B1B0A3 /* CDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRootViewController.h; sourceTree = "<group>"; };
+		D13679571896E0D500B1B0A3 /* CDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRootViewController.m; sourceTree = "<group>"; };
 		D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D1B3CD8C188FF74F00613DA7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -158,10 +164,14 @@
 				D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */,
 				D123BE0E188FBD38004F2839 /* Main_iPhone.storyboard */,
 				D123BE11188FBD38004F2839 /* Main_iPad.storyboard */,
+				D13679561896E0D500B1B0A3 /* CDRootViewController.h */,
+				D13679571896E0D500B1B0A3 /* CDRootViewController.m */,
 				D123BE14188FBD38004F2839 /* CDViewController.h */,
 				D123BE15188FBD38004F2839 /* CDViewController.m */,
 				D1B3CDB61891551300613DA7 /* CDNetworkDataLoader.h */,
 				D1B3CDB71891551300613DA7 /* CDNetworkDataLoader.m */,
+				D13679531896DFED00B1B0A3 /* CDPageContentViewController.h */,
+				D13679541896DFED00B1B0A3 /* CDPageContentViewController.m */,
 				D123BE17188FBD38004F2839 /* Images.xcassets */,
 				D123BE03188FBD38004F2839 /* Supporting Files */,
 				D1B3CD8E188FF75700613DA7 /* Model */,
@@ -351,6 +361,8 @@
 				D123BE09188FBD38004F2839 /* main.m in Sources */,
 				D1332A0B189306A1000EA54A /* Event.m in Sources */,
 				D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */,
+				D13679581896E0D500B1B0A3 /* CDRootViewController.m in Sources */,
+				D13679551896DFED00B1B0A3 /* CDPageContentViewController.m in Sources */,
 				D123BE0D188FBD38004F2839 /* CDAppDelegate.m in Sources */,
 				D1367952189324F900B1B0A3 /* Course.m in Sources */,
 				D1B3CDB81891551300613DA7 /* CDNetworkDataLoader.m in Sources */,
