@@ -30,23 +30,31 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    // Initialize UIPageViewController data source
-    _pageTitles = @[@"“My Courses” tab", @"“Due Dates” tab"];
+    // Check if credentials added
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults stringForKey:@"userPassword"] == nil) {
+        // Initialize UIPageViewController data source
+        _pageTitles = @[@"“My Courses” tab", @"“Due Dates” tab"];
 
-    // Create page view controller
-    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-    self.pageViewController.dataSource = self;
+        // Create page view controller
+        self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+        self.pageViewController.dataSource = self;
 
-    CDPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        CDPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+        NSArray *viewControllers = @[startingViewController];
+        [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
-    // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        // Change the size of page view controller
+        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 
-    [self addChildViewController:_pageViewController];
-    [self.view addSubview:_pageViewController.view];
-    [self.pageViewController didMoveToParentViewController:self];
+        [self addChildViewController:_pageViewController];
+        [self.view addSubview:_pageViewController.view];
+        [self.pageViewController didMoveToParentViewController:self];
+    } else {
+        self.tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        [self addChildViewController:self.tabBarController];
+        [self.view addSubview:self.tabBarController.view];
+    }
 }
 
 - (void)didReceiveMemoryWarning

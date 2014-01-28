@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Yuri Karabatov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface CDPageContentViewController : UIViewController
+@interface CDPageContentViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;

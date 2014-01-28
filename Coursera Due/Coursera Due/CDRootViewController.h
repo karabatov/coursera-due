@@ -11,6 +11,7 @@
 @interface CDRootViewController : UIViewController <UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) UITabBarController *tabBarController;
 @property (strong, nonatomic) NSArray *pageTitles;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+#import "AFOAuth2Client/AFOAuth2Client.h"
 
 @interface CDNetworkDataLoader : NSObject
 
@@ -30,5 +31,6 @@
 
 - (id)initWithCoursera;
 - (void)getDataInBackground;
+- (void)tryAuthenticatingWithEmail:(NSString *)email password:(NSString *)password success:(void (^)(AFOAuthCredential *credential))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 @end

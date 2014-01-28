@@ -8,7 +8,6 @@
 
 #import "CDNetworkDataLoader.h"
 #import "CDOAuthConstants.h"
-#import "AFOAuth2Client/AFOAuth2Client.h"
 #import "MXLCalendarManager/MXLCalendarManager.h"
 #import "Event.h"
 #import "Course.h"
@@ -240,7 +239,7 @@ static CDNetworkDataLoader *sharedLoader = nil;
                 int i = 0;
                 int j = 0;
 
-                while ((i < [eventIds count]) && (j <= [eventsMatching count])){
+                while ((i < [eventIds count]) && (j < [eventsMatching count])){
 
                     NSString *eventId = [eventIds objectAtIndex:i];
 
@@ -317,6 +316,24 @@ static CDNetworkDataLoader *sharedLoader = nil;
                                    parameters:nil
                                       success:oroSuccessBlock
                                       failure:nil];
+    });
+}
+
+- (void)tryAuthenticatingWithEmail:(NSString *)email password:(NSString *)password success:(void (^)(AFOAuthCredential *credential))successBlock failure:(void (^)(NSError *))failureBlock
+{
+    NSURL *url = [NSURL URLWithString:@"https://accounts.coursera.org"];
+    AFOAuth2Client *oauthClient = [AFOAuth2Client clientWithBaseURL:url
+                                                           clientID:kClientId
+                                                             secret:kClientSecret];
+
+    dispatch_queue_t gcdBackgroundQueue = dispatch_queue_create("GCDBkgrQueue", NULL);
+    dispatch_async(gcdBackgroundQueue, ^(void){
+        [oauthClient authenticateUsingOAuthWithPath:@"/oauth2/v1/token"
+                                           username:email
+                                           password:password
+                                              scope:@"password"
+                                            success:successBlock
+                                            failure:failureBlock];
     });
 }
 
