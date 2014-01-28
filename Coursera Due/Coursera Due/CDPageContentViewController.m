@@ -38,6 +38,8 @@
         [[CDNetworkDataLoader sharedLoader] tryAuthenticatingWithEmail:self.emailTextField.text password:self.passwordTextField.text success:^(AFOAuthCredential *credential) {
             // If yes, remove UIPageViewController, show UITabViewController (post notification?)
             NSLog(@"signInButtonClicked - In success block");
+            // Dismiss keyboard
+            [self.view endEditing:YES];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:self.emailTextField.text forKey:@"userEmail"];
             [defaults setObject:self.passwordTextField.text forKey:@"userPassword"];

@@ -65,6 +65,16 @@
 - (void)handleUserLogIn:(NSNotification *)notification
 {
     NSLog(@"Root View Controller - User Logged In notification");
+    [self showMainScreen];
+}
+
+- (void)showMainScreen
+{
+    self.tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+    [self addChildViewController:self.tabBarController];
+    [self.view addSubview:self.tabBarController.view];
+    [self.pageViewController removeFromParentViewController];
+    self.pageViewController = nil;
 }
 
 - (void)didReceiveMemoryWarning
