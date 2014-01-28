@@ -50,11 +50,21 @@
         [self addChildViewController:_pageViewController];
         [self.view addSubview:_pageViewController.view];
         [self.pageViewController didMoveToParentViewController:self];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleUserLogIn:)
+                                                     name:@"UserLoggedIn"
+                                                   object:nil];
     } else {
         self.tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
         [self addChildViewController:self.tabBarController];
         [self.view addSubview:self.tabBarController.view];
     }
+}
+
+- (void)handleUserLogIn:(NSNotification *)notification
+{
+    NSLog(@"Root View Controller - User Logged In notification");
 }
 
 - (void)didReceiveMemoryWarning

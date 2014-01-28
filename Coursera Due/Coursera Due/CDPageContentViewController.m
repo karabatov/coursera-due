@@ -38,9 +38,36 @@
         [[CDNetworkDataLoader sharedLoader] tryAuthenticatingWithEmail:self.emailTextField.text password:self.passwordTextField.text success:^(AFOAuthCredential *credential) {
             // If yes, remove UIPageViewController, show UITabViewController (post notification?)
             NSLog(@"signInButtonClicked - In success block");
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:self.emailTextField.text forKey:@"userEmail"];
+            [defaults setObject:self.passwordTextField.text forKey:@"userPassword"];
+            [defaults synchronize];
+
+            // Post notification for Root View Controller
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedIn"
+                                                                object:self];
         } failure:^(NSError *error) {
             // If no, say “Wrong password”
             NSLog(@"signInButtonClicked - In error block");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                OLGhostAlertView *emailAlert = [[OLGhostAlertView alloc] initWithTitle:@"Authentication failed" message: @"Please enter valid credentials."];
+                emailAlert.position = OLGhostAlertViewPositionTop;
+                emailAlert.style = OLGhostAlertViewStyleDark;
+                [emailAlert setCompletionBlock:^(void) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.emailTextField setTextColor:[UIColor blackColor]];
+                        [self.emailTextField setTintColor:[UIColor blackColor]];
+                        [self.passwordTextField setTextColor:[UIColor blackColor]];
+                        [self.passwordTextField setTintColor:[UIColor blackColor]];
+                    });
+                }];
+                [emailAlert show];
+                [self.emailTextField becomeFirstResponder];
+                [self.emailTextField setTextColor:[UIColor redColor]];
+                [self.emailTextField setTintColor:[UIColor redColor]];
+                [self.passwordTextField setTextColor:[UIColor redColor]];
+                [self.passwordTextField setTintColor:[UIColor redColor]];
+            });
         }];
     }
 }
