@@ -20,7 +20,8 @@
     NSLog(@"Sign in button clicked");
     if (![self NSStringIsValidEmail:self.emailTextField.text]) {
         NSLog(@"Email is invalid!");
-        OLGhostAlertView *emailAlert = [[OLGhostAlertView alloc] initWithTitle:@"Invalid Email" message: @"Please enter a valid Email address."];
+        OLGhostAlertView *emailAlert = [[OLGhostAlertView alloc] initWithTitle:@"Invalid Email"
+                                                                       message: @"Please enter a valid Email address."];
         emailAlert.position = OLGhostAlertViewPositionTop;
         emailAlert.style = OLGhostAlertViewStyleDark;
         [emailAlert setCompletionBlock:^(void) {
@@ -40,6 +41,8 @@
             NSLog(@"signInButtonClicked - In success block");
             // Dismiss keyboard
             [self.view endEditing:YES];
+
+            // Save username and password
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:self.emailTextField.text forKey:@"userEmail"];
             [defaults setObject:self.passwordTextField.text forKey:@"userPassword"];

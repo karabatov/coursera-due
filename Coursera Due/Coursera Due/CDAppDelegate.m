@@ -53,9 +53,9 @@
     pageControl.backgroundColor = [UIColor whiteColor];
 
     // Clear User Defaults on load (for testing)
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:nil forKey:@"userPassword"];
-    [defaults synchronize];
+    // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // [defaults setObject:nil forKey:@"userPassword"];
+    // [defaults synchronize];
 
     return YES;
 }

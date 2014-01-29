@@ -26,15 +26,15 @@
         <scene sceneID="Nbi-NU-Di4">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" definesPresentationContext="YES" id="bqF-KE-z6s" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="R8K-zi-EYA">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="lv9-Dk-FMG" kind="relationship" relationship="viewControllers" id="1Ix-jC-y8F"/>
                         <segue destination="gXQ-Yf-LOd" kind="relationship" relationship="viewControllers" id="GhZ-x0-9s2"/>
+                        <segue destination="lv9-Dk-FMG" kind="relationship" relationship="viewControllers" id="CmE-ys-wj0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pP-99-a9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,34 +132,84 @@
         <scene sceneID="fub-AH-EHG">
             <objects>
                 <tableViewController title="My Courses" id="gXQ-Yf-LOd" customClass="CDViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mou-m7-v3A">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mou-m7-v3A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" textLabel="JKu-hk-ewf" detailTextLabel="fOt-23-VVq" style="IBUITableViewCellStyleSubtitle" id="meM-C0-FRx">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="865" horizontalCompressionResistancePriority="548" verticalCompressionResistancePriority="423" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" id="meM-C0-FRx" customClass="CDEnrollmentCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="meM-C0-FRx" id="Fb8-Qz-0vS">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JKu-hk-ewf">
-                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="658" verticalHuggingPriority="669" horizontalCompressionResistancePriority="641" verticalCompressionResistancePriority="628" text="VERY LONG Event Name VERY LONG Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeT-VM-14B">
+                                            <rect key="frame" x="52" y="4" width="231" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fOt-23-VVq">
-                                            <rect key="frame" x="15" y="25" width="32" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-9B-tNb">
+                                            <rect key="frame" x="52" y="25" width="215" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R5-afb">
+                                            <rect key="frame" x="52" y="43" width="60" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="HARD" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.49999999999999994" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-Nb-qI1">
+                                            <rect key="frame" x="114" y="44" width="34" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.97155230978260865" green="0.091334813820915711" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="44" placeholderIntrinsicHeight="44" image="coursera.png" highlightedImage="coursera.png" translatesAutoresizingMaskIntoConstraints="NO" id="Svm-ks-O4v">
+                                            <rect key="frame" x="4" y="12" width="44" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="DUs-vv-8R1"/>
+                                                <constraint firstAttribute="width" constant="44" id="O1t-cu-PYD"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="Svm-ks-O4v" secondAttribute="centerY" id="1BG-sm-Zhu"/>
+                                        <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Ja6-9B-tNb" secondAttribute="leading" id="AQY-zp-WdW"/>
+                                        <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="52" id="Clp-50-e5d"/>
+                                        <constraint firstItem="4JO-R5-afb" firstAttribute="top" secondItem="Ja6-9B-tNb" secondAttribute="bottom" constant="1" id="N1Z-Zt-YXo"/>
+                                        <constraint firstItem="WeT-VM-14B" firstAttribute="top" secondItem="Fb8-Qz-0vS" secondAttribute="top" constant="4" id="Ugc-Ah-gAv"/>
+                                        <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="4JO-R5-afb" secondAttribute="leading" id="W76-Jk-nZx"/>
+                                        <constraint firstItem="4JO-R5-afb" firstAttribute="centerY" secondItem="FMu-Nb-qI1" secondAttribute="centerY" id="XD2-8L-4AK"/>
+                                        <constraint firstItem="FMu-Nb-qI1" firstAttribute="leading" secondItem="4JO-R5-afb" secondAttribute="trailing" constant="2" id="XUd-58-a0M"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ja6-9B-tNb" secondAttribute="trailing" constant="20" id="bAi-vX-Vr9"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FMu-Nb-qI1" secondAttribute="trailing" constant="2" id="cNf-jI-r8m"/>
+                                        <constraint firstItem="Svm-ks-O4v" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="4" id="rh4-zF-v7a"/>
+                                        <constraint firstAttribute="trailing" secondItem="WeT-VM-14B" secondAttribute="trailing" constant="4" id="vFB-B1-deU"/>
+                                        <constraint firstItem="Ja6-9B-tNb" firstAttribute="top" secondItem="WeT-VM-14B" secondAttribute="bottom" constant="1" id="wu6-S3-S36"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="courseImage" destination="Svm-ks-O4v" id="rLO-3k-mEZ"/>
+                                    <outlet property="courseNameLabel" destination="Ja6-9B-tNb" id="hly-sG-eyu"/>
+                                    <outlet property="deadlineTypeLabel" destination="FMu-Nb-qI1" id="gIK-G2-U6b"/>
+                                    <outlet property="dueDateLabel" destination="4JO-R5-afb" id="66P-2l-m2c"/>
+                                    <outlet property="eventNameLabel" destination="WeT-VM-14B" id="xyw-vq-uj9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -174,6 +224,9 @@
             <point key="canvasLocation" x="1204" y="223"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="coursera.png" width="44" height="44"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

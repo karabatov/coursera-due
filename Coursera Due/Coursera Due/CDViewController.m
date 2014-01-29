@@ -13,6 +13,8 @@
 #import "Topic.h"
 #import "Course.h"
 #import "Event.h"
+#import "CDEnrollmentCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface CDViewController ()
 
@@ -60,9 +62,12 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = event.eventSummary;
-    cell.detailTextLabel.text = [event.endDate description];
-    NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", cell.textLabel.text, cell.detailTextLabel.text);
+    CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
+    newCell.eventNameLabel.text = event.eventSummary;
+    newCell.dueDateLabel.text = [event.endDate description];
+    newCell.courseNameLabel.text = event.courseId.topicId.name;
+    [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
+    NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
 }
 
 #pragma mark - Table view methods
@@ -95,6 +100,35 @@
     [self configureCell:cell atIndexPath:indexPath];
 
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static CDEnrollmentCell *sizingCell;
+    static CGFloat height;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = (CDEnrollmentCell *)[tableView dequeueReusableCellWithIdentifier:@"CourseCell"];
+        // configure the cell
+        sizingCell.eventNameLabel.text = @"Some very very very very very very very long name";
+        sizingCell.courseNameLabel.text = @"Some very very very very very very very long name";
+        sizingCell.dueDateLabel.text = @"Some very very very very very very very long name";
+
+        // force layout
+        [sizingCell setNeedsLayout];
+        [sizingCell layoutIfNeeded];
+
+        height = 0;
+
+        height += sizingCell.eventNameLabel.bounds.size.height;
+        height += sizingCell.courseNameLabel.bounds.size.height;
+        height += sizingCell.dueDateLabel.bounds.size.height;
+        height += 8;
+    });
+
+    NSLog(@"Cell height = %f", height);
+
+    return height;
 }
 
 #pragma mark - Fetched results controller
