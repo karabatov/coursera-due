@@ -18,9 +18,6 @@
 
 @interface CDViewController ()
 
-@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
-
 @end
 
 @implementation CDViewController
@@ -30,29 +27,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    NSError *error;
+    [self subscribeToManagedObjectContextNotifications];
+}
 
+- (void)subscribeToManagedObjectContextNotifications
+{
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refreshManagedContext:)
+                                             selector:@selector(refreshManagedObjectContext:)
                                                  name:NSManagedObjectContextDidSaveNotification
                                                object:[[RKManagedObjectStore defaultStore] mainQueueManagedObjectContext]];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refreshManagedContext:)
+                                             selector:@selector(refreshManagedObjectContext:)
                                                  name:NSManagedObjectContextDidSaveNotification
                                                object:[[RKManagedObjectStore defaultStore] persistentStoreManagedObjectContext]];
-    if (![self.fetchedResultsController performFetch:&error])
-    {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
 }
 
-- (void)refreshManagedContext:(NSNotification *)notification
+- (void)refreshManagedObjectContext:(NSNotification *)notification
 {
     [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
     NSLog(@"Notification received: %@", notification.userInfo);
@@ -61,13 +51,7 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
-    newCell.eventNameLabel.text = event.eventSummary;
-    newCell.dueDateLabel.text = [event.endDate description];
-    newCell.courseNameLabel.text = event.courseId.topicId.name;
-    [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
-    NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
+    // Override this method
 }
 
 #pragma mark - Table view methods
@@ -90,48 +74,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CourseCell";
+    // Override this method
 
     /*
      Use a default table view cell to display the event's title.
      */
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
-    [self configureCell:cell atIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
 
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static CDEnrollmentCell *sizingCell;
-    static CGFloat height;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sizingCell = (CDEnrollmentCell *)[tableView dequeueReusableCellWithIdentifier:@"CourseCell"];
-        // configure the cell
-        sizingCell.eventNameLabel.text = @"Some very very very very very very very long name";
-        sizingCell.courseNameLabel.text = @"Some very very very very very very very long name";
-        sizingCell.dueDateLabel.text = @"Some very very very very very very very long name";
+    // Override this method
 
-        // force layout
-        [sizingCell setNeedsLayout];
-        [sizingCell layoutIfNeeded];
-
-        height = 0;
-
-        height += sizingCell.eventNameLabel.bounds.size.height;
-        height += sizingCell.courseNameLabel.bounds.size.height;
-        height += sizingCell.dueDateLabel.bounds.size.height;
-        height += 8;
-    });
-
-    NSLog(@"Cell height = %f", height);
-
-    return height;
+    return 60;
 }
 
 #pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)configureFetchedResultsController
+{
+    // Override this method
+    return [[NSFetchedResultsController alloc] init];
+
+}
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
@@ -140,28 +107,7 @@
         return _fetchedResultsController;
     }
 
-    /*
-     Set up the fetched results controller.
-     */
-    // Create the fetch request for the entity.
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSManagedObjectContext *managedObjectContext = [[RKManagedObjectStore defaultStore] newChildManagedObjectContextWithConcurrencyType:NSMainQueueConcurrencyType tracksChanges:YES];
-    self.managedObjectContext = managedObjectContext;
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-
-    // Sort using the startDate property.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
-    [fetchRequest setSortDescriptors:@[sortDescriptor ]];
-
-    // Filter
-    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@)", [[NSDate alloc] init]]];
-
-    // Do not group results into sections
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    _fetchedResultsController = [self configureFetchedResultsController];
     _fetchedResultsController.delegate = self;
 
     return _fetchedResultsController;

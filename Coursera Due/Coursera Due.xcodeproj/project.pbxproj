@@ -29,6 +29,7 @@
 		D136795B1899534300B1B0A3 /* CDEnrollmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */; };
 		D136796118998EFF00B1B0A3 /* coursera.png in Resources */ = {isa = PBXBuildFile; fileRef = D136795F18998EFF00B1B0A3 /* coursera.png */; };
 		D136796218998EFF00B1B0A3 /* coursera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136796018998EFF00B1B0A3 /* coursera@2x.png */; };
+		D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */; };
 		D1B3CD88188FF41400613DA7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */; };
 		D1B3CD8A188FF42400613DA7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */; };
 		D1B3CD8D188FF74F00613DA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */; };
@@ -85,6 +86,8 @@
 		D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEnrollmentCell.m; sourceTree = "<group>"; };
 		D136795F18998EFF00B1B0A3 /* coursera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coursera.png; sourceTree = "<group>"; };
 		D136796018998EFF00B1B0A3 /* coursera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coursera@2x.png"; sourceTree = "<group>"; };
+		D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEnrollmentViewController.h; sourceTree = "<group>"; };
+		D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEnrollmentViewController.m; sourceTree = "<group>"; };
 		D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D1B3CD8C188FF74F00613DA7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				D13679571896E0D500B1B0A3 /* CDRootViewController.m */,
 				D123BE14188FBD38004F2839 /* CDViewController.h */,
 				D123BE15188FBD38004F2839 /* CDViewController.m */,
+				D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */,
+				D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */,
 				D13679591899534300B1B0A3 /* CDEnrollmentCell.h */,
 				D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */,
 				D1B3CDB61891551300613DA7 /* CDNetworkDataLoader.h */,
@@ -384,6 +389,7 @@
 				D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */,
 				D136795B1899534300B1B0A3 /* CDEnrollmentCell.m in Sources */,
 				D13679581896E0D500B1B0A3 /* CDRootViewController.m in Sources */,
+				D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */,
 				D13679551896DFED00B1B0A3 /* CDPageContentViewController.m in Sources */,
 				D123BE0D188FBD38004F2839 /* CDAppDelegate.m in Sources */,
 				D1367952189324F900B1B0A3 /* Course.m in Sources */,

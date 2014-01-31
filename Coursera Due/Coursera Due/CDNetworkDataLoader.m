@@ -172,17 +172,15 @@ static CDNetworkDataLoader *sharedLoader = nil;
                                          failure:nil];
     };
 
-    dispatch_queue_t gcdBackgroundQueue = dispatch_queue_create("GCDBkgrQueue", NULL);
-    dispatch_async(gcdBackgroundQueue, ^(void){
-        [oauthClient authenticateUsingOAuthWithPath:@"/oauth2/v1/token"
-                                           username:kClientEmail
-                                           password:kClientPassword
-                                              scope:@"password"
-                                            success:oauthSuccessBlock
-                                            failure:^(NSError *error) {
-                                                NSLog(@"Error: %@", error);
-                                            }];
-    });
+    void (^oauthFailureBlock)(NSError *) = ^(NSError *error){
+        NSLog(@"Error: %@", error);
+    };
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *kClientEmail = [defaults stringForKey:@"userEmail"];
+    NSString *kClientPassword = [defaults stringForKey:@"userPassword"];
+
+    [self tryAuthenticatingWithEmail:kClientEmail password:kClientPassword success:oauthSuccessBlock failure:oauthFailureBlock];
 }
 
 - (void)getDeadlines
