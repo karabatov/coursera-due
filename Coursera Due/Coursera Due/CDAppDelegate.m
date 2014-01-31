@@ -43,7 +43,7 @@
 
     // Get data
 
-    [[CDNetworkDataLoader sharedLoader] getDataInBackground];
+    // [[CDNetworkDataLoader sharedLoader] getDataInBackground];
 
     // Customize UIPageControl appearance
 

@@ -41,12 +41,12 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Course *enrollment = [self.fetchedResultsController objectAtIndexPath:indexPath];
     CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
-    newCell.eventNameLabel.text = event.eventSummary;
-    newCell.dueDateLabel.text = [event.endDate description];
-    newCell.courseNameLabel.text = event.courseId.topicId.name;
-    [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
+    newCell.eventNameLabel.text = enrollment.topicId.name;
+    newCell.courseNameLabel.text = [enrollment.sessionId.startDate description];
+    newCell.dueDateLabel.text = [NSString stringWithFormat:@"End date: %@", [enrollment.sessionId.endDate description]];
+    [newCell.courseImage setImageWithURL:[NSURL URLWithString:enrollment.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
 }
 
@@ -88,7 +88,7 @@
         height += 8;
     });
 
-    NSLog(@"Cell height = %f", height);
+    //NSLog(@"Cell height = %f", height);
 
     return height;
 }
@@ -104,18 +104,18 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [[RKManagedObjectStore defaultStore] newChildManagedObjectContextWithConcurrencyType:NSMainQueueConcurrencyType tracksChanges:YES];
     self.managedObjectContext = managedObjectContext;
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
 
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
 
     // Sort using the startDate property.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES];
     [fetchRequest setSortDescriptors:@[sortDescriptor ]];
 
     // Filter
-    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@)", [[NSDate alloc] init]]];
+    //[fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(endDate >= %@)", [[NSDate alloc] init]]];
 
     // Do not group results into sections
     return [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];

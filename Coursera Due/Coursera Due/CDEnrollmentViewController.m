@@ -46,6 +46,20 @@
     newCell.eventNameLabel.text = event.eventSummary;
     newCell.dueDateLabel.text = [event.endDate description];
     newCell.courseNameLabel.text = event.courseId.topicId.name;
+    NSLog(@"event.isHardDeadline = %@", event.isHardDeadline);
+    if (nil != event.isHardDeadline) {
+        if (![event.isHardDeadline isEqual:@1]) {
+            [newCell.deadlineTypeLabel setHidden:NO];
+            newCell.deadlineTypeLabel.text = @"SOFT";
+            newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
+        } else {
+            [newCell.deadlineTypeLabel setHidden:NO];
+            newCell.deadlineTypeLabel.text = @"HARD";
+            newCell.deadlineTypeLabel.backgroundColor = [UIColor redColor];
+        }
+    } else {
+        [newCell.deadlineTypeLabel setHidden:YES];
+    }
     [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
 }
@@ -88,7 +102,7 @@
         height += 8;
     });
 
-    NSLog(@"Cell height = %f", height);
+    //NSLog(@"Cell height = %f", height);
 
     return height;
 }
@@ -100,6 +114,9 @@
     /*
      Set up the fetched results controller.
      */
+
+    NSLog(@"In configureFetchedResultsController");
+
     // Create the fetch request for the entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [[RKManagedObjectStore defaultStore] newChildManagedObjectContextWithConcurrencyType:NSMainQueueConcurrencyType tracksChanges:YES];
@@ -118,7 +135,9 @@
     [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@)", [[NSDate alloc] init]]];
 
     // Do not group results into sections
-    return [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController *newController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+
+    return newController;
 }
 
 - (void)didReceiveMemoryWarning

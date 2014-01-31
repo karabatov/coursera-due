@@ -23,6 +23,7 @@
         <attribute name="eventStatus" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventSummary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isHardDeadline" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="courseId" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="eventId" inverseEntity="Course" syncable="YES"/>
@@ -38,7 +39,7 @@
     <elements>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Enrollment" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Topic" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Topic" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

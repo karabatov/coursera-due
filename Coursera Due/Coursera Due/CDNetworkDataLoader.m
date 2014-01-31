@@ -173,7 +173,7 @@ static CDNetworkDataLoader *sharedLoader = nil;
     };
 
     void (^oauthFailureBlock)(NSError *) = ^(NSError *error){
-        NSLog(@"Error: %@", error);
+        NSLog(@"Error authenticating: %@", error);
     };
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -192,7 +192,7 @@ static CDNetworkDataLoader *sharedLoader = nil;
     NSFetchRequest *courseFetchRequest = [[NSFetchRequest alloc] init];
     [courseFetchRequest setEntity:
      [NSEntityDescription entityForName:@"Course" inManagedObjectContext:bgMOC]];
-    [courseFetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(homeLink != nil) && (sessionId) != nil"]];
+    [courseFetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(homeLink != nil) && (sessionId != nil)"]];
     NSError *error;
     NSArray *coursesMatching = [bgMOC executeFetchRequest:courseFetchRequest error:&error];
 
@@ -203,7 +203,6 @@ static CDNetworkDataLoader *sharedLoader = nil;
         MXLCalendarManager *calendarManager = [[MXLCalendarManager alloc] init];
         [calendarManager scanICSFileAtRemoteURL:url withCompletionHandler:^(MXLCalendar *calendar, NSError *error) {
             if (!error) {
-                //NSLog(@"Calendar event uid, summary: %@ — %@", event.eventUniqueID, event.eventSummary);
 
                 // As in https://developer.apple.com/library/mac/documentation/cocoa/conceptual/CoreData/Articles/cdImporting.html
 
@@ -211,6 +210,7 @@ static CDNetworkDataLoader *sharedLoader = nil;
                 NSMutableArray *eventUIds = [[NSMutableArray alloc] init];
                 for (MXLCalendarEvent *event in calendar.events) {
                     [eventUIds addObject:event.eventUniqueID];
+                    //NSLog(@"Calendar event uid, summary: %@ — %@", event.eventUniqueID, event.eventSummary);
                 }
                 NSArray *eventIds = [eventUIds sortedArrayUsingSelector:@selector(compare:)];
 
@@ -234,21 +234,25 @@ static CDNetworkDataLoader *sharedLoader = nil;
                 NSError *error;
                 NSArray *eventsMatching = [aMOC executeFetchRequest:fetchRequest error:&error];
 
+                NSLog(@"eventsMatching count: %lu", (unsigned long)[eventsMatching count]);
+
                 int i = 0;
                 int j = 0;
 
-                while ((i < [eventIds count]) && (j < [eventsMatching count])){
+                while ((i < [eventIds count]) && (j <= [eventsMatching count])){
+
+                    NSLog(@"i = %d, j = %d", i, j);
 
                     NSString *eventId = [eventIds objectAtIndex:i];
 
                     Event *newEvt = nil;
 
-                    if ([eventsMatching count] != 0)
+                    if (([eventsMatching count] != 0) && (j < [eventsMatching count]))
                         newEvt = [eventsMatching objectAtIndex:j];
 
                     if (![eventId isEqualToString:newEvt.id]){
 
-                        //Insert new Employee entity into context
+                        //Insert new Event entity into context
                         newEvt = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:aMOC];
                         newEvt.id = eventId;
                         MXLCalendarEvent *event = [calendarEventsSorted objectAtIndex:i];
@@ -256,6 +260,20 @@ static CDNetworkDataLoader *sharedLoader = nil;
                         newEvt.endDate = event.eventEndDate;
                         newEvt.createDate = event.eventCreatedDate;
                         newEvt.lastModifiedDate = event.eventLastModifiedDate;
+
+                        // Due date, Hard deadline or none?
+                        if ([event.eventSummary rangeOfString:@" (Due Date)"].location != NSNotFound) {
+                            event.eventSummary = [event.eventSummary stringByReplacingOccurrencesOfString:@" (Due Date)" withString:@""];
+                            newEvt.isHardDeadline = 0;
+                        }
+                        if ([event.eventSummary rangeOfString:@" (Hard Deadline)"].location != NSNotFound) {
+                            event.eventSummary = [event.eventSummary stringByReplacingOccurrencesOfString:@" (Hard Deadline)" withString:@""];
+                            newEvt.isHardDeadline = [NSNumber numberWithBool:YES];
+                        }
+
+                        NSLog(@"Event Summary before: %@, event summary after: %@", event.eventSummary, newEvt.eventSummary);
+                        NSLog(@"isHardDeadline: %@", newEvt.isHardDeadline);
+
                         newEvt.eventSummary = event.eventSummary;
                         newEvt.eventDescription = event.eventDescription;
                         newEvt.eventStatus = event.eventStatus;

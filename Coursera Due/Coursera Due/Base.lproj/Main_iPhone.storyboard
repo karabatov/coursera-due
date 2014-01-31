@@ -276,6 +276,7 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4JO-R5-afb" secondAttribute="trailing" constant="4" id="0Ee-k5-Aes"/>
                                         <constraint firstAttribute="centerY" secondItem="Svm-ks-O4v" secondAttribute="centerY" id="1BG-sm-Zhu"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Ja6-9B-tNb" secondAttribute="leading" id="AQY-zp-WdW"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="52" id="Clp-50-e5d"/>

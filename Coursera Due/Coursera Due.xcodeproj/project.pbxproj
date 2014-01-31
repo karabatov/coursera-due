@@ -22,7 +22,6 @@
 		D123BE21188FBD38004F2839 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D123BE00188FBD38004F2839 /* UIKit.framework */; };
 		D123BE29188FBD38004F2839 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D123BE27188FBD38004F2839 /* InfoPlist.strings */; };
 		D123BE2B188FBD38004F2839 /* Coursera_DueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D123BE2A188FBD38004F2839 /* Coursera_DueTests.m */; };
-		D1332A0B189306A1000EA54A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D1332A0A189306A1000EA54A /* Event.m */; };
 		D1367952189324F900B1B0A3 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = D1367951189324F900B1B0A3 /* Course.m */; };
 		D13679551896DFED00B1B0A3 /* CDPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13679541896DFED00B1B0A3 /* CDPageContentViewController.m */; };
 		D13679581896E0D500B1B0A3 /* CDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D13679571896E0D500B1B0A3 /* CDRootViewController.m */; };
@@ -31,6 +30,7 @@
 		D136796218998EFF00B1B0A3 /* coursera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136796018998EFF00B1B0A3 /* coursera@2x.png */; };
 		D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */; };
 		D1B2FBA3189BDE8C00E9FFB8 /* CDCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */; };
+		D1B2FBAC189BF68000E9FFB8 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FBAB189BF68000E9FFB8 /* Event.m */; };
 		D1B3CD88188FF41400613DA7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */; };
 		D1B3CD8A188FF42400613DA7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */; };
 		D1B3CD8D188FF74F00613DA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */; };
@@ -75,8 +75,6 @@
 		D123BE26188FBD38004F2839 /* Coursera DueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coursera DueTests-Info.plist"; sourceTree = "<group>"; };
 		D123BE28188FBD38004F2839 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D123BE2A188FBD38004F2839 /* Coursera_DueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coursera_DueTests.m; sourceTree = "<group>"; };
-		D1332A09189306A1000EA54A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
-		D1332A0A189306A1000EA54A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
 		D1367950189324F900B1B0A3 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Course.h; path = Model/Course.h; sourceTree = "<group>"; };
 		D1367951189324F900B1B0A3 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Course.m; path = Model/Course.m; sourceTree = "<group>"; };
 		D13679531896DFED00B1B0A3 /* CDPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPageContentViewController.h; sourceTree = "<group>"; };
@@ -91,6 +89,8 @@
 		D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEnrollmentViewController.m; sourceTree = "<group>"; };
 		D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCourseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		D1B2FBA1189BDA7D00E9FFB8 /* CDCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCourseViewController.h; sourceTree = "<group>"; };
+		D1B2FBAA189BF68000E9FFB8 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
+		D1B2FBAB189BF68000E9FFB8 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
 		D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D1B3CD8C188FF74F00613DA7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -241,10 +241,10 @@
 			isa = PBXGroup;
 			children = (
 				D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */,
+				D1B2FBAA189BF68000E9FFB8 /* Event.h */,
+				D1B2FBAB189BF68000E9FFB8 /* Event.m */,
 				D1367950189324F900B1B0A3 /* Course.h */,
 				D1367951189324F900B1B0A3 /* Course.m */,
-				D1332A09189306A1000EA54A /* Event.h */,
-				D1332A0A189306A1000EA54A /* Event.m */,
 				D1B3CDAD189006DF00613DA7 /* Topic.h */,
 				D1B3CDAE189006DF00613DA7 /* Topic.m */,
 				D1B3CDAA189006DE00613DA7 /* Enrollment.h */,
@@ -390,7 +390,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D123BE09188FBD38004F2839 /* main.m in Sources */,
-				D1332A0B189306A1000EA54A /* Event.m in Sources */,
 				D1B2FBA3189BDE8C00E9FFB8 /* CDCourseViewController.m in Sources */,
 				D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */,
 				D136795B1899534300B1B0A3 /* CDEnrollmentCell.m in Sources */,
@@ -402,6 +401,7 @@
 				D1B3CDB81891551300613DA7 /* CDNetworkDataLoader.m in Sources */,
 				D1B3CDAC189006DE00613DA7 /* Enrollment.m in Sources */,
 				D123BE16188FBD38004F2839 /* CDViewController.m in Sources */,
+				D1B2FBAC189BF68000E9FFB8 /* Event.m in Sources */,
 				D1B3CDAF189006DF00613DA7 /* Topic.m in Sources */,
 				D1B3CD8D188FF74F00613DA7 /* Model.xcdatamodeld in Sources */,
 			);

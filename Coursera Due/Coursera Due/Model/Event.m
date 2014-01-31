@@ -2,7 +2,7 @@
 //  Event.m
 //  Coursera Due
 //
-//  Created by Yuri Karabatov on 25.01.14.
+//  Created by Yuri Karabatov on 31.01.14.
 //  Copyright (c) 2014 Yuri Karabatov. All rights reserved.
 //
 
@@ -12,14 +12,15 @@
 
 @implementation Event
 
-@dynamic startDate;
-@dynamic endDate;
 @dynamic createDate;
-@dynamic lastModifiedDate;
-@dynamic id;
-@dynamic eventSummary;
+@dynamic endDate;
 @dynamic eventDescription;
 @dynamic eventStatus;
+@dynamic eventSummary;
+@dynamic id;
+@dynamic lastModifiedDate;
+@dynamic startDate;
+@dynamic isHardDeadline;
 @dynamic courseId;
 
 @end

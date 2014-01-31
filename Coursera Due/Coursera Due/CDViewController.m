@@ -48,6 +48,9 @@
     NSLog(@"Notification received: %@", notification.userInfo);
     NSError *error;
     [self.fetchedResultsController performFetch:&error];
+    if (error) {
+        NSLog(@"Error fetching: %@", [error userInfo]);
+    }
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -97,7 +100,6 @@
 {
     // Override this method
     return [[NSFetchedResultsController alloc] init];
-
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
