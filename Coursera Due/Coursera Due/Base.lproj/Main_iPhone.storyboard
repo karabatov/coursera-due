@@ -50,31 +50,107 @@
                     </tabBar>
                     <connections>
                         <segue destination="gXQ-Yf-LOd" kind="relationship" relationship="viewControllers" id="GhZ-x0-9s2"/>
-                        <segue destination="lv9-Dk-FMG" kind="relationship" relationship="viewControllers" id="CmE-ys-wj0"/>
+                        <segue destination="cVy-yU-2sa" kind="relationship" relationship="viewControllers" id="Dab-6R-XRU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pP-99-a9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660" y="603"/>
         </scene>
-        <!--View Controller - Item 2-->
-        <scene sceneID="RPo-jE-KKg">
+        <!--Course View Controller - Courses-->
+        <scene sceneID="bp7-zt-ZbC">
             <objects>
-                <viewController id="lv9-Dk-FMG" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pqp-bY-fo5"/>
-                        <viewControllerLayoutGuide type="bottom" id="wWu-qO-lIl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aYv-6H-LPV">
+                <tableViewController id="cVy-yU-2sa" customClass="CDCourseViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="0oF-eW-6ys">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="UYS-nG-MhQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ASL-6Z-7lR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="865" horizontalCompressionResistancePriority="548" verticalCompressionResistancePriority="423" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" rowHeight="67" id="f68-g2-tIg" customClass="CDEnrollmentCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f68-g2-tIg" id="etC-au-M35">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="658" verticalHuggingPriority="669" horizontalCompressionResistancePriority="641" verticalCompressionResistancePriority="628" text="VERY LONG Event Name VERY LONG Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yX-bT-S7f">
+                                            <rect key="frame" x="52" y="4" width="231" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-vo-cGu">
+                                            <rect key="frame" x="52" y="25" width="215" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-4A-0DO">
+                                            <rect key="frame" x="52" y="43" width="60" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="HARD" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Cx-K1-fiv">
+                                            <rect key="frame" x="114" y="44" width="34" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.97155230979999996" green="0.091334813819999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="44" placeholderIntrinsicHeight="44" image="coursera.png" highlightedImage="coursera.png" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-2e-1ia">
+                                            <rect key="frame" x="4" y="11" width="44" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="nuG-wR-G6M"/>
+                                                <constraint firstAttribute="height" constant="44" id="nyq-Rv-gFi"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="i1e-vo-cGu" secondAttribute="trailing" constant="20" id="3r4-XD-ZsX"/>
+                                        <constraint firstAttribute="centerY" secondItem="ggs-2e-1ia" secondAttribute="centerY" id="77R-u0-nyh"/>
+                                        <constraint firstItem="9yX-bT-S7f" firstAttribute="leading" secondItem="bXM-4A-0DO" secondAttribute="leading" id="7D0-1K-t23"/>
+                                        <constraint firstItem="9yX-bT-S7f" firstAttribute="leading" secondItem="i1e-vo-cGu" secondAttribute="leading" id="AD7-gb-8Qm"/>
+                                        <constraint firstItem="9yX-bT-S7f" firstAttribute="top" secondItem="etC-au-M35" secondAttribute="top" constant="4" id="G5t-Um-Gre"/>
+                                        <constraint firstItem="ggs-2e-1ia" firstAttribute="leading" secondItem="etC-au-M35" secondAttribute="leading" constant="4" id="Hdw-cu-qjc"/>
+                                        <constraint firstItem="9yX-bT-S7f" firstAttribute="leading" secondItem="etC-au-M35" secondAttribute="leading" constant="52" id="MtV-93-A9p"/>
+                                        <constraint firstItem="i1e-vo-cGu" firstAttribute="top" secondItem="9yX-bT-S7f" secondAttribute="bottom" constant="1" id="Qc9-mM-ssn"/>
+                                        <constraint firstItem="4Cx-K1-fiv" firstAttribute="leading" secondItem="bXM-4A-0DO" secondAttribute="trailing" constant="2" id="TP4-5I-cM9"/>
+                                        <constraint firstAttribute="trailing" secondItem="9yX-bT-S7f" secondAttribute="trailing" constant="4" id="ac8-RJ-fVb"/>
+                                        <constraint firstItem="bXM-4A-0DO" firstAttribute="centerY" secondItem="4Cx-K1-fiv" secondAttribute="centerY" id="d55-tb-6kf"/>
+                                        <constraint firstItem="bXM-4A-0DO" firstAttribute="top" secondItem="i1e-vo-cGu" secondAttribute="bottom" constant="1" id="lLg-bv-QKe"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Cx-K1-fiv" secondAttribute="trailing" constant="2" id="zyk-Lj-wWq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="courseImage" destination="ggs-2e-1ia" id="i52-BO-uuN"/>
+                                    <outlet property="courseNameLabel" destination="i1e-vo-cGu" id="c1f-Es-7do"/>
+                                    <outlet property="deadlineTypeLabel" destination="4Cx-K1-fiv" id="Ue8-Q2-DXW"/>
+                                    <outlet property="dueDateLabel" destination="bXM-4A-0DO" id="mca-Ia-AL6"/>
+                                    <outlet property="eventNameLabel" destination="9yX-bT-S7f" id="MUL-FL-i2P"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cVy-yU-2sa" id="18f-os-du1"/>
+                            <outlet property="delegate" destination="cVy-yU-2sa" id="8CV-fQ-Pcy"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Courses" id="Ee0-9m-2e7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6Y-Qm-4xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="966"/>
+            <point key="canvasLocation" x="1204" y="926"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="9mt-kK-Y42">
@@ -233,7 +309,7 @@
                             <outlet property="delegate" destination="gXQ-Yf-LOd" id="XJc-LQ-C5i"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="5bR-0D-ipA"/>
+                    <tabBarItem key="tabBarItem" title="Enrollments" id="5bR-0D-ipA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZN-5b-fFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
