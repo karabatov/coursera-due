@@ -9,6 +9,7 @@
 #import "CDRootViewController.h"
 @import QuartzCore;
 #import "CDPageContentViewController.h"
+#import "CDNetworkDataLoader.h"
 
 @interface CDRootViewController ()
 
@@ -56,9 +57,17 @@
                                                      name:@"UserLoggedIn"
                                                    object:nil];
     } else {
-        self.tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-        [self addChildViewController:self.tabBarController];
-        [self.view addSubview:self.tabBarController.view];
+        self.navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Update"
+                                                                        style:UIBarButtonItemStyleDone
+                                                                       target:[CDNetworkDataLoader sharedLoader]
+                                                                       action:@selector(getDataInBackground)];
+        UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"Title"];
+        item.leftBarButtonItem = rightButton;
+        item.hidesBackButton = YES;
+        [self.navigationController.navigationBar pushNavigationItem:item animated:YES];
+        [self addChildViewController:self.navigationController];
+        [self.view addSubview:self.navigationController.view];
     }
 }
 

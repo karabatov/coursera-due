@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) UINavigationController *navigationController;
 @property (strong, nonatomic) NSArray *pageTitles;
 
 @end
