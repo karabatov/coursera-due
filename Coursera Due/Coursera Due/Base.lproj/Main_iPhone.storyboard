@@ -93,19 +93,6 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="HARD" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Cx-K1-fiv">
-                                            <rect key="frame" x="114" y="44" width="34" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.97155230979999996" green="0.091334813819999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="4"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="44" placeholderIntrinsicHeight="44" image="coursera.png" highlightedImage="coursera.png" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-2e-1ia">
                                             <rect key="frame" x="4" y="11" width="44" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -114,6 +101,12 @@
                                                 <constraint firstAttribute="width" constant="44" id="nuG-wR-G6M"/>
                                                 <constraint firstAttribute="height" constant="44" id="nyq-Rv-gFi"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -125,17 +118,14 @@
                                         <constraint firstItem="ggs-2e-1ia" firstAttribute="leading" secondItem="etC-au-M35" secondAttribute="leading" constant="4" id="Hdw-cu-qjc"/>
                                         <constraint firstItem="9yX-bT-S7f" firstAttribute="leading" secondItem="etC-au-M35" secondAttribute="leading" constant="52" id="MtV-93-A9p"/>
                                         <constraint firstItem="i1e-vo-cGu" firstAttribute="top" secondItem="9yX-bT-S7f" secondAttribute="bottom" constant="1" id="Qc9-mM-ssn"/>
-                                        <constraint firstItem="4Cx-K1-fiv" firstAttribute="leading" secondItem="bXM-4A-0DO" secondAttribute="trailing" constant="2" id="TP4-5I-cM9"/>
                                         <constraint firstAttribute="trailing" secondItem="9yX-bT-S7f" secondAttribute="trailing" constant="4" id="ac8-RJ-fVb"/>
-                                        <constraint firstItem="bXM-4A-0DO" firstAttribute="centerY" secondItem="4Cx-K1-fiv" secondAttribute="centerY" id="d55-tb-6kf"/>
                                         <constraint firstItem="bXM-4A-0DO" firstAttribute="top" secondItem="i1e-vo-cGu" secondAttribute="bottom" constant="1" id="lLg-bv-QKe"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Cx-K1-fiv" secondAttribute="trailing" constant="2" id="zyk-Lj-wWq"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bXM-4A-0DO" secondAttribute="trailing" constant="4" id="tbD-hn-5su"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="courseImage" destination="ggs-2e-1ia" id="i52-BO-uuN"/>
                                     <outlet property="courseNameLabel" destination="i1e-vo-cGu" id="c1f-Es-7do"/>
-                                    <outlet property="deadlineTypeLabel" destination="4Cx-K1-fiv" id="Ue8-Q2-DXW"/>
                                     <outlet property="dueDateLabel" destination="bXM-4A-0DO" id="mca-Ia-AL6"/>
                                     <outlet property="eventNameLabel" destination="9yX-bT-S7f" id="MUL-FL-i2P"/>
                                 </connections>
@@ -277,6 +267,12 @@
                                                 <constraint firstAttribute="height" constant="44" id="DUs-vv-8R1"/>
                                                 <constraint firstAttribute="width" constant="44" id="O1t-cu-PYD"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="22"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                     <constraints>
