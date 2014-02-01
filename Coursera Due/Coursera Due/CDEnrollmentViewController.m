@@ -50,11 +50,11 @@
     if (nil != event.isHardDeadline) {
         if (![event.isHardDeadline isEqual:@1]) {
             [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @"SOFT";
+            newCell.deadlineTypeLabel.text = @"DUE DATE";
             newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
         } else {
             [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @"HARD";
+            newCell.deadlineTypeLabel.text = @"HARD DEADLINE";
             newCell.deadlineTypeLabel.backgroundColor = [UIColor redColor];
         }
     } else {
@@ -132,7 +132,7 @@
     [fetchRequest setSortDescriptors:@[sortDescriptor ]];
 
     // Filter
-    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@)", [[NSDate alloc] init]]];
+    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@) && (endDate <= ALL courseId.sessionId.endDate)", [[NSDate alloc] init]]];
 
     // Do not group results into sections
     NSFetchedResultsController *newController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
