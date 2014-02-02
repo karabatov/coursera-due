@@ -2,7 +2,7 @@
 //  Enrollment.m
 //  Coursera Due
 //
-//  Created by Yuri Karabatov on 22.01.14.
+//  Created by Yuri Karabatov on 02.02.14.
 //  Copyright (c) 2014 Yuri Karabatov. All rights reserved.
 //
 
@@ -13,12 +13,12 @@
 
 @implementation Enrollment
 
+@dynamic endDate;
 @dynamic id;
 @dynamic isSignatureTrack;
 @dynamic startDate;
-@dynamic endDate;
 @dynamic startStatus;
-@dynamic sessionId;
 @dynamic courseId;
+@dynamic sessionId;
 
 @end

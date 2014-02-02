@@ -48,7 +48,7 @@
     newCell.courseNameLabel.text = event.courseId.topicId.name;
     NSLog(@"event.isHardDeadline = %@", event.isHardDeadline);
     if (nil != event.isHardDeadline) {
-        if (![event.isHardDeadline isEqual:@1]) {
+        if (![event.isHardDeadline isEqualToNumber:@1]) {
             [newCell.deadlineTypeLabel setHidden:NO];
             newCell.deadlineTypeLabel.text = @"DUE DATE";
             newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
@@ -58,10 +58,14 @@
             newCell.deadlineTypeLabel.backgroundColor = [UIColor redColor];
         }
     } else {
+        newCell.deadlineTypeLabel.text = @"";
         [newCell.deadlineTypeLabel setHidden:YES];
     }
     [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
+    NSLog(@"Session startDate: %@", event.courseId.sessionId.startDate);
+    NSLog(@"Session endDate: %@", event.courseId.sessionId.endDate);
+    NSLog(@"Session startStatus: %@", event.courseId.sessionId.startStatus);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,7 +136,7 @@
     [fetchRequest setSortDescriptors:@[sortDescriptor ]];
 
     // Filter
-    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@) && (endDate <= ALL courseId.sessionId.endDate)", [[NSDate alloc] init]]];
+    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(courseId != nil) && (endDate >= %@) && (courseId.sessionId != nil) && (courseId.sessionId.startStatus == %@) && (startDate <= courseId.sessionId.endDate)", [[NSDate alloc] init], @"Present"]];
 
     // Do not group results into sections
     NSFetchedResultsController *newController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];

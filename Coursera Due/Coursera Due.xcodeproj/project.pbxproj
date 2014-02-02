@@ -28,13 +28,13 @@
 		D136795B1899534300B1B0A3 /* CDEnrollmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */; };
 		D136796118998EFF00B1B0A3 /* coursera.png in Resources */ = {isa = PBXBuildFile; fileRef = D136795F18998EFF00B1B0A3 /* coursera.png */; };
 		D136796218998EFF00B1B0A3 /* coursera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136796018998EFF00B1B0A3 /* coursera@2x.png */; };
+		D16DFC1D189E5F6800BB1469 /* Enrollment.m in Sources */ = {isa = PBXBuildFile; fileRef = D16DFC1C189E5F6800BB1469 /* Enrollment.m */; };
 		D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */; };
 		D1B2FBA3189BDE8C00E9FFB8 /* CDCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */; };
 		D1B2FBAC189BF68000E9FFB8 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FBAB189BF68000E9FFB8 /* Event.m */; };
 		D1B3CD88188FF41400613DA7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */; };
 		D1B3CD8A188FF42400613DA7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */; };
 		D1B3CD8D188FF74F00613DA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */; };
-		D1B3CDAC189006DE00613DA7 /* Enrollment.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDAB189006DE00613DA7 /* Enrollment.m */; };
 		D1B3CDAF189006DF00613DA7 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDAE189006DF00613DA7 /* Topic.m */; };
 		D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */; };
 		D1B3CDB81891551300613DA7 /* CDNetworkDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B3CDB71891551300613DA7 /* CDNetworkDataLoader.m */; };
@@ -85,6 +85,8 @@
 		D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEnrollmentCell.m; sourceTree = "<group>"; };
 		D136795F18998EFF00B1B0A3 /* coursera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coursera.png; sourceTree = "<group>"; };
 		D136796018998EFF00B1B0A3 /* coursera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coursera@2x.png"; sourceTree = "<group>"; };
+		D16DFC1B189E5F6800BB1469 /* Enrollment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enrollment.h; path = Model/Enrollment.h; sourceTree = "<group>"; };
+		D16DFC1C189E5F6800BB1469 /* Enrollment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enrollment.m; path = Model/Enrollment.m; sourceTree = "<group>"; };
 		D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEnrollmentViewController.h; sourceTree = "<group>"; };
 		D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEnrollmentViewController.m; sourceTree = "<group>"; };
 		D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCourseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -94,8 +96,6 @@
 		D1B3CD87188FF41400613DA7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D1B3CD89188FF42400613DA7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D1B3CD8C188FF74F00613DA7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		D1B3CDAA189006DE00613DA7 /* Enrollment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enrollment.h; path = Model/Enrollment.h; sourceTree = "<group>"; };
-		D1B3CDAB189006DE00613DA7 /* Enrollment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enrollment.m; path = Model/Enrollment.m; sourceTree = "<group>"; };
 		D1B3CDAD189006DF00613DA7 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Topic.h; path = Model/Topic.h; sourceTree = "<group>"; };
 		D1B3CDAE189006DF00613DA7 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Topic.m; path = Model/Topic.m; sourceTree = "<group>"; };
 		D1B3CDB318914BF300613DA7 /* CDOAuthConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOAuthConstants.h; sourceTree = "<group>"; };
@@ -241,14 +241,14 @@
 			isa = PBXGroup;
 			children = (
 				D1B3CD8B188FF74F00613DA7 /* Model.xcdatamodeld */,
+				D16DFC1B189E5F6800BB1469 /* Enrollment.h */,
+				D16DFC1C189E5F6800BB1469 /* Enrollment.m */,
 				D1B2FBAA189BF68000E9FFB8 /* Event.h */,
 				D1B2FBAB189BF68000E9FFB8 /* Event.m */,
 				D1367950189324F900B1B0A3 /* Course.h */,
 				D1367951189324F900B1B0A3 /* Course.m */,
 				D1B3CDAD189006DF00613DA7 /* Topic.h */,
 				D1B3CDAE189006DF00613DA7 /* Topic.m */,
-				D1B3CDAA189006DE00613DA7 /* Enrollment.h */,
-				D1B3CDAB189006DE00613DA7 /* Enrollment.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -397,9 +397,9 @@
 				D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */,
 				D13679551896DFED00B1B0A3 /* CDPageContentViewController.m in Sources */,
 				D123BE0D188FBD38004F2839 /* CDAppDelegate.m in Sources */,
+				D16DFC1D189E5F6800BB1469 /* Enrollment.m in Sources */,
 				D1367952189324F900B1B0A3 /* Course.m in Sources */,
 				D1B3CDB81891551300613DA7 /* CDNetworkDataLoader.m in Sources */,
-				D1B3CDAC189006DE00613DA7 /* Enrollment.m in Sources */,
 				D123BE16188FBD38004F2839 /* CDViewController.m in Sources */,
 				D1B2FBAC189BF68000E9FFB8 /* Event.m in Sources */,
 				D1B3CDAF189006DF00613DA7 /* Topic.m in Sources */,

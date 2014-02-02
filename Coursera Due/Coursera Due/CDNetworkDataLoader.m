@@ -260,23 +260,20 @@ static CDNetworkDataLoader *sharedLoader = nil;
                         newEvt.endDate = event.eventEndDate;
                         newEvt.createDate = event.eventCreatedDate;
                         newEvt.lastModifiedDate = event.eventLastModifiedDate;
-
-                        // Due date, Hard deadline or none?
-                        if ([event.eventSummary rangeOfString:@" (Due Date)"].location != NSNotFound) {
-                            event.eventSummary = [event.eventSummary stringByReplacingOccurrencesOfString:@" (Due Date)" withString:@""];
-                            newEvt.isHardDeadline = 0;
-                        }
-                        if ([event.eventSummary rangeOfString:@" (Hard Deadline)"].location != NSNotFound) {
-                            event.eventSummary = [event.eventSummary stringByReplacingOccurrencesOfString:@" (Hard Deadline)" withString:@""];
-                            newEvt.isHardDeadline = [NSNumber numberWithBool:YES];
-                        }
-
-                        NSLog(@"Event Summary before: %@, event summary after: %@", event.eventSummary, newEvt.eventSummary);
-                        NSLog(@"isHardDeadline: %@", newEvt.isHardDeadline);
-
                         newEvt.eventSummary = event.eventSummary;
                         newEvt.eventDescription = event.eventDescription;
                         newEvt.eventStatus = event.eventStatus;
+                        newEvt.isHardDeadline = nil;
+
+                        // Due date, Hard deadline or none?
+                        if ([[[newEvt.id componentsSeparatedByString:@"|"] lastObject] isEqualToString:@"soft"]) {
+                            newEvt.eventSummary = [newEvt.eventSummary stringByReplacingOccurrencesOfString:@" (Due Date)" withString:@""];
+                            newEvt.isHardDeadline = [NSNumber numberWithBool:NO];
+                        }
+                        if ([[[newEvt.id componentsSeparatedByString:@"|"] lastObject] isEqualToString:@"hard"]) {
+                            newEvt.eventSummary = [newEvt.eventSummary stringByReplacingOccurrencesOfString:@" (Hard Deadline)" withString:@""];
+                            newEvt.isHardDeadline = [NSNumber numberWithBool:YES];
+                        }
 
                         // Now set the proper Course ID
                         NSString *courseIdString = [[eventId componentsSeparatedByString:@"|"] objectAtIndex:0];
