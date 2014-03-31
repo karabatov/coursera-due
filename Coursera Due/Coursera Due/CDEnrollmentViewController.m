@@ -50,11 +50,11 @@
     if (nil != event.isHardDeadline) {
         if (![event.isHardDeadline isEqualToNumber:@1]) {
             [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @"DUE DATE";
+            newCell.deadlineTypeLabel.text = @" DUE DATE ";
             newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
         } else {
             [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @"HARD DEADLINE";
+            newCell.deadlineTypeLabel.text = @" HARD DEADLINE ";
             newCell.deadlineTypeLabel.backgroundColor = [UIColor redColor];
         }
     } else {
