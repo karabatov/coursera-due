@@ -110,9 +110,9 @@
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
 
-    // Sort using the startDate property.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES];
-    [fetchRequest setSortDescriptors:@[sortDescriptor ]];
+    // Sort using the endDate property.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"topicId.name" ascending:YES];
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
 
     // Filter
     [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(sessionId != nil) && (sessionId.endDate >= %@) && (sessionId.startStatus == %@)", [[NSDate alloc] init], @"Present"]];
