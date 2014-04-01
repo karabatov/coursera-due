@@ -115,7 +115,7 @@
     [fetchRequest setSortDescriptors:@[sortDescriptor ]];
 
     // Filter
-    //[fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(endDate >= %@)", [[NSDate alloc] init]]];
+    [fetchRequest setPredicate: [NSPredicate predicateWithFormat: @"(sessionId != nil) && (sessionId.endDate >= %@) && (sessionId.startStatus == %@)", [[NSDate alloc] init], @"Present"]];
 
     // Do not group results into sections
     return [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];

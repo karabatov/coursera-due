@@ -58,8 +58,9 @@
             newCell.deadlineTypeLabel.backgroundColor = [UIColor redColor];
         }
     } else {
-        newCell.deadlineTypeLabel.text = @"";
-        [newCell.deadlineTypeLabel setHidden:YES];
+        newCell.deadlineTypeLabel.text = @"DUE";
+        newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
+        [newCell.deadlineTypeLabel setHidden:NO];
     }
     [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
