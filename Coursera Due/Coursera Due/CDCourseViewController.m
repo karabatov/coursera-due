@@ -41,12 +41,22 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Course *enrollment = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Course *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
-    newCell.eventNameLabel.text = enrollment.topicId.name;
-    newCell.courseNameLabel.text = [enrollment.sessionId.startDate description];
-    newCell.dueDateLabel.text = [NSString stringWithFormat:@"End date: %@", [enrollment.sessionId.endDate description]];
-    [newCell.courseImage setImageWithURL:[NSURL URLWithString:enrollment.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
+    newCell.eventNameLabel.text = course.topicId.name;
+    newCell.courseNameLabel.text = [NSString stringWithFormat:@"End date: %@", [self.dateFormatter stringFromDate:course.sessionId.endDate]];
+
+    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"(endDate >= %@) && (endDate <= %@)", [NSDate new], course.sessionId.endDate];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"endDate" ascending:YES];
+    NSSet *filteredSet = [course.eventId filteredSetUsingPredicate:filterPredicate];
+    NSDate *endDate = [[[filteredSet sortedArrayUsingDescriptors:@[sortDescriptor]] firstObject] valueForKey:@"endDate"];
+    if (endDate != nil) {
+        newCell.dueDateLabel.text = [NSString stringWithFormat:@"Due %@", [self.dateFormatter stringFromDate:endDate]];
+    } else {
+        newCell.dueDateLabel.text = @"Yay, nothing due!";
+    }
+
+    [newCell.courseImage setImageWithURL:[NSURL URLWithString:course.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
 }
 
