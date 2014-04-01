@@ -219,35 +219,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="865" horizontalCompressionResistancePriority="548" verticalCompressionResistancePriority="423" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" id="meM-C0-FRx" customClass="CDEnrollmentCell">
+                            <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="865" horizontalCompressionResistancePriority="548" verticalCompressionResistancePriority="423" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" id="meM-C0-FRx" customClass="CDEnrollmentCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="meM-C0-FRx" id="Fb8-Qz-0vS">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="658" verticalHuggingPriority="669" horizontalCompressionResistancePriority="641" verticalCompressionResistancePriority="628" text="VERY LONG Event Name VERY LONG Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeT-VM-14B">
-                                            <rect key="frame" x="52" y="4" width="231" height="20"/>
+                                            <rect key="frame" x="52" y="4" width="243" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-9B-tNb">
-                                            <rect key="frame" x="52" y="25" width="215" height="17"/>
+                                            <rect key="frame" x="52" y="25" width="248" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R5-afb">
-                                            <rect key="frame" x="52" y="43" width="60" height="17"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" ambiguous="YES" misplaced="YES" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R5-afb">
+                                            <rect key="frame" x="52" y="43" width="230" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.49999999999999994" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-Nb-qI1">
-                                            <rect key="frame" x="114" y="44" width="34" height="15"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.49999999999999994" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-Nb-qI1" customClass="NRLabel">
+                                            <rect key="frame" x="284" y="45" width="32" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.97155230978260865" green="0.091334813820915711" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -255,7 +255,7 @@
                                             <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="4"/>
+                                                    <integer key="value" value="6"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
@@ -274,9 +274,16 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure.png" highlightedImage="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="oIh-VZ-amo">
+                                            <rect key="frame" x="299" y="7" width="13" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="GSr-20-DYd"/>
+                                                <constraint firstAttribute="width" constant="13" id="eXW-lc-c6N"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4JO-R5-afb" secondAttribute="trailing" constant="4" id="0Ee-k5-Aes"/>
                                         <constraint firstAttribute="centerY" secondItem="Svm-ks-O4v" secondAttribute="centerY" id="1BG-sm-Zhu"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Ja6-9B-tNb" secondAttribute="leading" id="AQY-zp-WdW"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="52" id="Clp-50-e5d"/>
@@ -285,10 +292,12 @@
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="4JO-R5-afb" secondAttribute="leading" id="W76-Jk-nZx"/>
                                         <constraint firstItem="4JO-R5-afb" firstAttribute="centerY" secondItem="FMu-Nb-qI1" secondAttribute="centerY" id="XD2-8L-4AK"/>
                                         <constraint firstItem="FMu-Nb-qI1" firstAttribute="leading" secondItem="4JO-R5-afb" secondAttribute="trailing" constant="2" id="XUd-58-a0M"/>
+                                        <constraint firstAttribute="trailing" secondItem="oIh-VZ-amo" secondAttribute="trailing" constant="8" id="Xon-g9-Zoy"/>
                                         <constraint firstAttribute="trailing" secondItem="Ja6-9B-tNb" secondAttribute="trailing" constant="20" id="bAi-vX-Vr9"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FMu-Nb-qI1" secondAttribute="trailing" constant="2" id="cNf-jI-r8m"/>
+                                        <constraint firstAttribute="trailing" secondItem="FMu-Nb-qI1" secondAttribute="trailing" constant="8" id="cNf-jI-r8m"/>
+                                        <constraint firstItem="oIh-VZ-amo" firstAttribute="centerY" secondItem="WeT-VM-14B" secondAttribute="centerY" id="jj0-wD-McS"/>
+                                        <constraint firstItem="oIh-VZ-amo" firstAttribute="leading" secondItem="WeT-VM-14B" secondAttribute="trailing" constant="4" id="kA3-gl-q9k"/>
                                         <constraint firstItem="Svm-ks-O4v" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="4" id="rh4-zF-v7a"/>
-                                        <constraint firstAttribute="trailing" secondItem="WeT-VM-14B" secondAttribute="trailing" constant="4" id="vFB-B1-deU"/>
                                         <constraint firstItem="Ja6-9B-tNb" firstAttribute="top" secondItem="WeT-VM-14B" secondAttribute="bottom" constant="1" id="wu6-S3-S36"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -315,6 +324,7 @@
     </scenes>
     <resources>
         <image name="coursera.png" width="44" height="44"/>
+        <image name="disclosure.png" width="13" height="14"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

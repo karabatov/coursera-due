@@ -28,6 +28,9 @@
 		D136795B1899534300B1B0A3 /* CDEnrollmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */; };
 		D136796118998EFF00B1B0A3 /* coursera.png in Resources */ = {isa = PBXBuildFile; fileRef = D136795F18998EFF00B1B0A3 /* coursera.png */; };
 		D136796218998EFF00B1B0A3 /* coursera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136796018998EFF00B1B0A3 /* coursera@2x.png */; };
+		D136B6D718EADE7700DBD780 /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6D518EADE7700DBD780 /* disclosure@2x.png */; };
+		D136B6D818EADE7700DBD780 /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6D618EADE7700DBD780 /* disclosure.png */; };
+		D136B6DB18EAE2BB00DBD780 /* NRLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D136B6DA18EAE2BB00DBD780 /* NRLabel.m */; };
 		D16DFC1D189E5F6800BB1469 /* Enrollment.m in Sources */ = {isa = PBXBuildFile; fileRef = D16DFC1C189E5F6800BB1469 /* Enrollment.m */; };
 		D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */; };
 		D1B2FBA3189BDE8C00E9FFB8 /* CDCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */; };
@@ -85,6 +88,10 @@
 		D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEnrollmentCell.m; sourceTree = "<group>"; };
 		D136795F18998EFF00B1B0A3 /* coursera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coursera.png; sourceTree = "<group>"; };
 		D136796018998EFF00B1B0A3 /* coursera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coursera@2x.png"; sourceTree = "<group>"; };
+		D136B6D518EADE7700DBD780 /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
+		D136B6D618EADE7700DBD780 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		D136B6D918EAE2BB00DBD780 /* NRLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NRLabel.h; sourceTree = "<group>"; };
+		D136B6DA18EAE2BB00DBD780 /* NRLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NRLabel.m; sourceTree = "<group>"; };
 		D16DFC1B189E5F6800BB1469 /* Enrollment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enrollment.h; path = Model/Enrollment.h; sourceTree = "<group>"; };
 		D16DFC1C189E5F6800BB1469 /* Enrollment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enrollment.m; path = Model/Enrollment.m; sourceTree = "<group>"; };
 		D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEnrollmentViewController.h; sourceTree = "<group>"; };
@@ -183,6 +190,8 @@
 				D123BE15188FBD38004F2839 /* CDViewController.m */,
 				D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */,
 				D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */,
+				D136B6D918EAE2BB00DBD780 /* NRLabel.h */,
+				D136B6DA18EAE2BB00DBD780 /* NRLabel.m */,
 				D1B2FBA1189BDA7D00E9FFB8 /* CDCourseViewController.h */,
 				D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */,
 				D13679591899534300B1B0A3 /* CDEnrollmentCell.h */,
@@ -231,6 +240,8 @@
 		D136795E18998DBF00B1B0A3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D136B6D518EADE7700DBD780 /* disclosure@2x.png */,
+				D136B6D618EADE7700DBD780 /* disclosure.png */,
 				D136795F18998EFF00B1B0A3 /* coursera.png */,
 				D136796018998EFF00B1B0A3 /* coursera@2x.png */,
 			);
@@ -336,7 +347,9 @@
 				D136796218998EFF00B1B0A3 /* coursera@2x.png in Resources */,
 				D123BE13188FBD38004F2839 /* Main_iPad.storyboard in Resources */,
 				D123BE18188FBD38004F2839 /* Images.xcassets in Resources */,
+				D136B6D718EADE7700DBD780 /* disclosure@2x.png in Resources */,
 				D123BE10188FBD38004F2839 /* Main_iPhone.storyboard in Resources */,
+				D136B6D818EADE7700DBD780 /* disclosure.png in Resources */,
 				D123BE07188FBD38004F2839 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +406,7 @@
 				D1B2FBA3189BDE8C00E9FFB8 /* CDCourseViewController.m in Sources */,
 				D1B3CDB518914BF300613DA7 /* CDOAuthConstants.m in Sources */,
 				D136795B1899534300B1B0A3 /* CDEnrollmentCell.m in Sources */,
+				D136B6DB18EAE2BB00DBD780 /* NRLabel.m in Sources */,
 				D13679581896E0D500B1B0A3 /* CDRootViewController.m in Sources */,
 				D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */,
 				D13679551896DFED00B1B0A3 /* CDPageContentViewController.m in Sources */,

@@ -44,17 +44,17 @@
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
     newCell.eventNameLabel.text = event.eventSummary;
-    newCell.dueDateLabel.text = [event.endDate description];
+    newCell.dueDateLabel.text = [self.dateFormatter stringFromDate:event.endDate];
     newCell.courseNameLabel.text = event.courseId.topicId.name;
     NSLog(@"event.isHardDeadline = %@", event.isHardDeadline);
     if (nil != event.isHardDeadline) {
         if (![event.isHardDeadline isEqualToNumber:@1]) {
             [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @" DUE DATE ";
+            newCell.deadlineTypeLabel.text = @"DUE";
             newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
         } else {
             [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @" HARD DEADLINE ";
+            newCell.deadlineTypeLabel.text = @"DEADLINE";
             newCell.deadlineTypeLabel.backgroundColor = [UIColor redColor];
         }
     } else {

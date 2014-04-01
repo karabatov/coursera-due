@@ -168,6 +168,20 @@
     [self.tableView endUpdates];
 }
 
+- (NSDateFormatter *)dateFormatter
+{
+    if (!_dateFormatter) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        [_dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        NSLocale *myLocale = [NSLocale currentLocale];
+        [_dateFormatter setLocale:myLocale];
+        [_dateFormatter setDoesRelativeDateFormatting:YES];
+    }
+
+    return _dateFormatter;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

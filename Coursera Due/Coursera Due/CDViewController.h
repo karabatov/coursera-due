@@ -10,6 +10,7 @@
 
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) NSDateFormatter *dateFormatter;
 
 - (void)subscribeToManagedObjectContextNotifications;
 - (void)refreshManagedObjectContext:(NSNotification *)notification;
