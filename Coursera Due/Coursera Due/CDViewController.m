@@ -15,6 +15,7 @@
 #import "Event.h"
 #import "CDEnrollmentCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "NSDateFormatter+RelativeDateFormat.h"
 
 @interface CDViewController ()
 
@@ -171,12 +172,12 @@
 - (NSDateFormatter *)dateFormatter
 {
     if (!_dateFormatter) {
+        NSString *formatString = [NSDateFormatter dateFormatFromTemplate:@"dMMMhhmm"
+                                                                 options:0
+                                                                  locale:[NSLocale currentLocale]];
         _dateFormatter = [[NSDateFormatter alloc] init];
-        [_dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-        [_dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        NSLocale *myLocale = [NSLocale currentLocale];
-        [_dateFormatter setLocale:myLocale];
-        [_dateFormatter setDoesRelativeDateFormatting:YES];
+        [_dateFormatter setDateFormat:formatString];
+        [_dateFormatter setDoesRelativeDateFormatting:NO];
     }
 
     return _dateFormatter;

@@ -15,6 +15,7 @@
 #import "Event.h"
 #import "CDEnrollmentCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "NSDateFormatter+RelativeDateFormat.h"
 
 @interface CDEnrollmentViewController ()
 
@@ -44,7 +45,7 @@
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
     newCell.eventNameLabel.text = event.eventSummary;
-    newCell.dueDateLabel.text = [self.dateFormatter stringFromDate:event.endDate];
+    newCell.dueDateLabel.text = [self.dateFormatter relativeStringFromDateIfPossible:event.endDate];
     newCell.courseNameLabel.text = event.courseId.topicId.name;
     NSLog(@"event.isHardDeadline = %@", event.isHardDeadline);
     if ((nil != event.isHardDeadline) && ([event.isHardDeadline isEqualToNumber:@1])) {
@@ -62,7 +63,7 @@
     [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
     NSLog(@"Session startDate: %@", event.courseId.sessionId.startDate);
-    NSLog(@"Session endDate: %@", event.courseId.sessionId.endDate);
+    NSLog(@"Session endDate: %@", [self.dateFormatter stringFromDate:event.courseId.sessionId.endDate]);
     NSLog(@"Session startStatus: %@", event.courseId.sessionId.startStatus);
 }
 
