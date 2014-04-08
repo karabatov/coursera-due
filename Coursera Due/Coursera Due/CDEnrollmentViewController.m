@@ -47,20 +47,17 @@
     newCell.dueDateLabel.text = [self.dateFormatter stringFromDate:event.endDate];
     newCell.courseNameLabel.text = event.courseId.topicId.name;
     NSLog(@"event.isHardDeadline = %@", event.isHardDeadline);
-    if (nil != event.isHardDeadline) {
-        if (![event.isHardDeadline isEqualToNumber:@1]) {
-            [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @"DUE";
-            newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
-        } else {
-            [newCell.deadlineTypeLabel setHidden:NO];
-            newCell.deadlineTypeLabel.text = @"DEADLINE";
-            newCell.deadlineTypeLabel.backgroundColor = [UIColor redColor];
-        }
+    if ((nil != event.isHardDeadline) && ([event.isHardDeadline isEqualToNumber:@1])) {
+        newCell.deadlineTypeLabel.text = @"DEADLINE";
+        newCell.deadlineTypeLabel.textColor = [UIColor whiteColor];
+        newCell.deadlineTypeLabel.backgroundColor = [UIColor blackColor];
+        newCell.deadlineTypeLabel.layer.borderWidth = 0.0;
     } else {
         newCell.deadlineTypeLabel.text = @"DUE";
-        newCell.deadlineTypeLabel.backgroundColor = [UIColor greenColor];
-        [newCell.deadlineTypeLabel setHidden:NO];
+        newCell.deadlineTypeLabel.textColor = [UIColor blackColor];
+        newCell.deadlineTypeLabel.backgroundColor = [UIColor clearColor];
+        newCell.deadlineTypeLabel.layer.borderColor = [UIColor blackColor].CGColor;
+        newCell.deadlineTypeLabel.layer.borderWidth = 1.0;
     }
     [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);
