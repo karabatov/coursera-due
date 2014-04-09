@@ -51,4 +51,33 @@
         return [self stringFromDate:date];
     }
 }
+
+- (NSString *)weeksFromDate:(NSDate *)date
+{
+    NSDate *start;
+    NSTimeInterval extends;
+    NSCalendar *cal = [NSCalendar autoupdatingCurrentCalendar];
+    NSDate *today = [NSDate date];
+    BOOL success = [cal rangeOfUnit:NSWeekCalendarUnit
+                          startDate:&start
+                           interval:&extends
+                            forDate:today];
+    if (success) {
+        NSTimeInterval dateInSecs = [date timeIntervalSinceReferenceDate];
+        NSTimeInterval dayStartInSecs= [start timeIntervalSinceReferenceDate];
+        if (dateInSecs > dayStartInSecs && dateInSecs < (dayStartInSecs+extends)) {
+            return @"this week";
+        }
+        else {
+            if (dateInSecs > dayStartInSecs && dateInSecs < (dayStartInSecs+extends*2)) {
+                return @"next week";
+            } else {
+                return [NSString stringWithFormat:@"in %1.0f weeks", floor((dateInSecs - dayStartInSecs) / extends)];
+            }
+        }
+    } else {
+        return [self relativeStringFromDateIfPossible:date];
+    }
+}
+
 @end

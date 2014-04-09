@@ -15,6 +15,7 @@
 #import "Event.h"
 #import "CDEnrollmentCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "NSDateFormatter+RelativeDateFormat.h"
 
 @interface CDCourseViewController ()
 
@@ -44,14 +45,14 @@
     Course *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
     newCell.eventNameLabel.text = course.topicId.name;
-    newCell.courseNameLabel.text = [NSString stringWithFormat:@"End date: %@", [self.dateFormatter stringFromDate:course.sessionId.endDate]];
+    newCell.courseNameLabel.text = [NSString stringWithFormat:@"Ends %@", [self.dateFormatter weeksFromDate:course.sessionId.endDate]];
 
     NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"(endDate >= %@) && (endDate <= %@)", [NSDate new], course.sessionId.endDate];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"endDate" ascending:YES];
     NSSet *filteredSet = [course.eventId filteredSetUsingPredicate:filterPredicate];
     NSDate *endDate = [[[filteredSet sortedArrayUsingDescriptors:@[sortDescriptor]] firstObject] valueForKey:@"endDate"];
     if (endDate != nil) {
-        newCell.dueDateLabel.text = [NSString stringWithFormat:@"Due %@", [self.dateFormatter stringFromDate:endDate]];
+        newCell.dueDateLabel.text = [NSString stringWithFormat:@"Due %@", [self.dateFormatter relativeStringFromDateIfPossible:endDate]];
     } else {
         newCell.dueDateLabel.text = @"Yay, nothing due!";
     }

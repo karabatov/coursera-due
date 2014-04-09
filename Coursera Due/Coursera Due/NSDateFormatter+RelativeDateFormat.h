@@ -11,5 +11,6 @@
 @interface NSDateFormatter (RelativeDateFormat)
 
 - (NSString *)relativeStringFromDateIfPossible:(NSDate *)date;
+- (NSString *)weeksFromDate:(NSDate *)date;
 
 @end
