@@ -44,6 +44,8 @@
 		D136B6F218F5B26300DBD780 /* suitcase@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6E818F5B26300DBD780 /* suitcase@2x.png */; };
 		D136B6F918F5B5AB00DBD780 /* scholarhat.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6F718F5B5AB00DBD780 /* scholarhat.png */; };
 		D136B6FA18F5B5AB00DBD780 /* scholarhat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6F818F5B5AB00DBD780 /* scholarhat@2x.png */; };
+		D136B6FD18F5B8A200DBD780 /* scholarhat-small.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6FB18F5B8A200DBD780 /* scholarhat-small.png */; };
+		D136B6FE18F5B8A200DBD780 /* scholarhat-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6FC18F5B8A200DBD780 /* scholarhat-small@2x.png */; };
 		D16DFC1D189E5F6800BB1469 /* Enrollment.m in Sources */ = {isa = PBXBuildFile; fileRef = D16DFC1C189E5F6800BB1469 /* Enrollment.m */; };
 		D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */; };
 		D1B2FBA3189BDE8C00E9FFB8 /* CDCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */; };
@@ -119,6 +121,8 @@
 		D136B6E818F5B26300DBD780 /* suitcase@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "suitcase@2x.png"; sourceTree = "<group>"; };
 		D136B6F718F5B5AB00DBD780 /* scholarhat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scholarhat.png; sourceTree = "<group>"; };
 		D136B6F818F5B5AB00DBD780 /* scholarhat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scholarhat@2x.png"; sourceTree = "<group>"; };
+		D136B6FB18F5B8A200DBD780 /* scholarhat-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scholarhat-small.png"; sourceTree = "<group>"; };
+		D136B6FC18F5B8A200DBD780 /* scholarhat-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scholarhat-small@2x.png"; sourceTree = "<group>"; };
 		D16DFC1B189E5F6800BB1469 /* Enrollment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enrollment.h; path = Model/Enrollment.h; sourceTree = "<group>"; };
 		D16DFC1C189E5F6800BB1469 /* Enrollment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enrollment.m; path = Model/Enrollment.m; sourceTree = "<group>"; };
 		D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEnrollmentViewController.h; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				D136B6E418F5B26300DBD780 /* list@2x.png */,
 				D136B6F718F5B5AB00DBD780 /* scholarhat.png */,
 				D136B6F818F5B5AB00DBD780 /* scholarhat@2x.png */,
+				D136B6FB18F5B8A200DBD780 /* scholarhat-small.png */,
+				D136B6FC18F5B8A200DBD780 /* scholarhat-small@2x.png */,
 				D136B6E518F5B26300DBD780 /* settings.png */,
 				D136B6E618F5B26300DBD780 /* settings@2x.png */,
 				D136B6E718F5B26300DBD780 /* suitcase.png */,
@@ -393,12 +399,14 @@
 				D123BE18188FBD38004F2839 /* Images.xcassets in Resources */,
 				D136B6ED18F5B26300DBD780 /* list.png in Resources */,
 				D136B6EF18F5B26300DBD780 /* settings.png in Resources */,
+				D136B6FE18F5B8A200DBD780 /* scholarhat-small@2x.png in Resources */,
 				D136B6EA18F5B26300DBD780 /* calendar@2x.png in Resources */,
 				D136B6EB18F5B26300DBD780 /* courses.png in Resources */,
 				D136B6FA18F5B5AB00DBD780 /* scholarhat@2x.png in Resources */,
 				D136B6E918F5B26300DBD780 /* calendar.png in Resources */,
 				D136B6EC18F5B26300DBD780 /* courses@2x.png in Resources */,
 				D136B6D718EADE7700DBD780 /* disclosure@2x.png in Resources */,
+				D136B6FD18F5B8A200DBD780 /* scholarhat-small.png in Resources */,
 				D123BE10188FBD38004F2839 /* Main_iPhone.storyboard in Resources */,
 				D136B6F018F5B26300DBD780 /* settings@2x.png in Resources */,
 				D136B6D818EADE7700DBD780 /* disclosure.png in Resources */,

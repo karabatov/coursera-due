@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xwr-73-cNd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -252,21 +253,21 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-9B-tNb">
-                                            <rect key="frame" x="52" y="25" width="248" height="17"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-9B-tNb">
+                                            <rect key="frame" x="70" y="25" width="230" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" misplaced="YES" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R5-afb">
-                                            <rect key="frame" x="52" y="43" width="230" height="17"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R5-afb">
+                                            <rect key="frame" x="52" y="41" width="60" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.49999999999999994" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-Nb-qI1" customClass="NRLabel">
-                                            <rect key="frame" x="284" y="45" width="32" height="14"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.49999999999999994" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-Nb-qI1" customClass="NRLabel">
+                                            <rect key="frame" x="280" y="43" width="32" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.97155230978260865" green="0.091334813820915711" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -301,19 +302,30 @@
                                                 <constraint firstAttribute="width" constant="13" id="eXW-lc-c6N"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scholarhat-small.png" highlightedImage="scholarhat-small.png" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-5r-RJ0">
+                                            <rect key="frame" x="52" y="24" width="16" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="GfN-5r-RJ0" secondAttribute="height" multiplier="1:1" id="Zsd-B9-Oie"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="16" id="eDN-Y9-vm2"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="16" id="t8S-IX-tat"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="Svm-ks-O4v" secondAttribute="centerY" id="1BG-sm-Zhu"/>
-                                        <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Ja6-9B-tNb" secondAttribute="leading" id="AQY-zp-WdW"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="52" id="Clp-50-e5d"/>
                                         <constraint firstItem="4JO-R5-afb" firstAttribute="top" secondItem="Ja6-9B-tNb" secondAttribute="bottom" constant="1" id="N1Z-Zt-YXo"/>
+                                        <constraint firstItem="Ja6-9B-tNb" firstAttribute="centerY" secondItem="GfN-5r-RJ0" secondAttribute="centerY" id="QmA-Va-zjt"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="top" secondItem="Fb8-Qz-0vS" secondAttribute="top" constant="4" id="Ugc-Ah-gAv"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="4JO-R5-afb" secondAttribute="leading" id="W76-Jk-nZx"/>
                                         <constraint firstItem="4JO-R5-afb" firstAttribute="centerY" secondItem="FMu-Nb-qI1" secondAttribute="centerY" id="XD2-8L-4AK"/>
                                         <constraint firstItem="FMu-Nb-qI1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4JO-R5-afb" secondAttribute="trailing" priority="750" constant="2" id="XUd-58-a0M"/>
                                         <constraint firstAttribute="trailing" secondItem="oIh-VZ-amo" secondAttribute="trailing" constant="8" id="Xon-g9-Zoy"/>
+                                        <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="GfN-5r-RJ0" secondAttribute="leading" id="b98-Y8-Cov"/>
                                         <constraint firstAttribute="trailing" secondItem="Ja6-9B-tNb" secondAttribute="trailing" constant="20" id="bAi-vX-Vr9"/>
                                         <constraint firstAttribute="trailing" secondItem="FMu-Nb-qI1" secondAttribute="trailing" constant="8" id="cNf-jI-r8m"/>
+                                        <constraint firstItem="Ja6-9B-tNb" firstAttribute="leading" secondItem="GfN-5r-RJ0" secondAttribute="trailing" constant="2" id="cfZ-fD-j1a"/>
                                         <constraint firstItem="oIh-VZ-amo" firstAttribute="centerY" secondItem="WeT-VM-14B" secondAttribute="centerY" id="jj0-wD-McS"/>
                                         <constraint firstItem="oIh-VZ-amo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WeT-VM-14B" secondAttribute="trailing" priority="750" constant="4" id="kA3-gl-q9k"/>
                                         <constraint firstItem="Svm-ks-O4v" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="4" id="rh4-zF-v7a"/>
@@ -347,6 +359,7 @@
         <image name="calendar.png" width="30" height="30"/>
         <image name="coursera.png" width="44" height="44"/>
         <image name="disclosure.png" width="13" height="14"/>
+        <image name="scholarhat-small.png" width="16" height="16"/>
         <image name="scholarhat.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
