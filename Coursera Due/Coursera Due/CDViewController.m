@@ -23,6 +23,17 @@
 
 @implementation CDViewController
 
+- (void)setNavigationBarTitle:(NSString *)title
+{
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Update"
+                                                                    style:UIBarButtonItemStyleDone
+                                                                   target:[CDNetworkDataLoader sharedLoader]
+                                                                   action:@selector(getDataInBackground)];
+    [[self parentViewController].navigationItem setTitle:title];
+    [self parentViewController].navigationItem.hidesBackButton = YES;
+    [[self parentViewController].navigationItem setLeftBarButtonItem:rightButton];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

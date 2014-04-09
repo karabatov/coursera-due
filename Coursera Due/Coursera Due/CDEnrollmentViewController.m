@@ -23,6 +23,13 @@
 
 @implementation CDEnrollmentViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [self setNavigationBarTitle:@"Homework"];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

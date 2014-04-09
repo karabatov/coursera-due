@@ -12,6 +12,7 @@
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) NSDateFormatter *dateFormatter;
 
+- (void)setNavigationBarTitle:(NSString *)title;
 - (void)subscribeToManagedObjectContextNotifications;
 - (void)refreshManagedObjectContext:(NSNotification *)notification;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;

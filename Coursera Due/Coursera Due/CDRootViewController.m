@@ -57,6 +57,7 @@
                                                      name:@"UserLoggedIn"
                                                    object:nil];
     } else {
+        [[CDNetworkDataLoader sharedLoader] getDataInBackground];
         [self showMainScreen];
     }
 }
@@ -70,21 +71,13 @@
 
 - (void)showMainScreen
 {
-    self.navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Update"
-                                                                    style:UIBarButtonItemStyleDone
-                                                                   target:[CDNetworkDataLoader sharedLoader]
-                                                                   action:@selector(getDataInBackground)];
-    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"Title"];
-    item.leftBarButtonItem = rightButton;
-    item.hidesBackButton = YES;
-    [self.navigationController.navigationBar pushNavigationItem:item animated:YES];
-    [self addChildViewController:self.navigationController];
-    [self.view addSubview:self.navigationController.view];
     if (self.pageViewController) {
         [self.pageViewController removeFromParentViewController];
         self.pageViewController = nil;
     }
+    self.navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    [self addChildViewController:self.navigationController];
+    [self.view addSubview:self.navigationController.view];
 }
 
 - (void)didReceiveMemoryWarning

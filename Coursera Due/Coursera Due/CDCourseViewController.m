@@ -23,6 +23,13 @@
 
 @implementation CDCourseViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [self setNavigationBarTitle:@"Courses"];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
