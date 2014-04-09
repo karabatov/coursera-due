@@ -153,7 +153,9 @@
                             <outlet property="delegate" destination="cVy-yU-2sa" id="8CV-fQ-Pcy"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Courses" id="Ee0-9m-2e7"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="scholarhat.png" id="Ee0-9m-2e7">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6Y-Qm-4xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,7 +334,9 @@
                             <outlet property="delegate" destination="gXQ-Yf-LOd" id="XJc-LQ-C5i"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Enrollments" id="5bR-0D-ipA"/>
+                    <tabBarItem key="tabBarItem" title="Homework" image="calendar.png" id="5bR-0D-ipA">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZN-5b-fFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,8 +344,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar.png" width="30" height="30"/>
         <image name="coursera.png" width="44" height="44"/>
         <image name="disclosure.png" width="13" height="14"/>
+        <image name="scholarhat.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
