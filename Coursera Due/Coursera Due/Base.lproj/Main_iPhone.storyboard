@@ -73,28 +73,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="865" horizontalCompressionResistancePriority="548" verticalCompressionResistancePriority="423" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" id="f68-g2-tIg" customClass="CDEnrollmentCell">
+                            <tableViewCell contentMode="scaleToFill" verticalHuggingPriority="865" horizontalCompressionResistancePriority="548" verticalCompressionResistancePriority="423" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseCell" id="f68-g2-tIg" customClass="CDEnrollmentCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f68-g2-tIg" id="etC-au-M35">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="658" verticalHuggingPriority="669" horizontalCompressionResistancePriority="641" verticalCompressionResistancePriority="628" text="VERY LONG Event Name VERY LONG Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yX-bT-S7f">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="658" verticalHuggingPriority="669" horizontalCompressionResistancePriority="641" verticalCompressionResistancePriority="628" misplaced="YES" text="VERY LONG Event Name VERY LONG Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yX-bT-S7f">
                                             <rect key="frame" x="52" y="4" width="231" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-vo-cGu">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure.png" highlightedImage="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="2FG-ym-609">
+                                            <rect key="frame" x="299" y="7" width="13" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="13" id="QFU-gV-Nty"/>
+                                                <constraint firstAttribute="height" constant="14" id="ssd-Uq-MpD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-vo-cGu">
                                             <rect key="frame" x="52" y="25" width="215" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-4A-0DO">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" misplaced="YES" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXM-4A-0DO">
                                             <rect key="frame" x="52" y="43" width="60" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -118,14 +126,16 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="i1e-vo-cGu" secondAttribute="trailing" constant="20" id="3r4-XD-ZsX"/>
+                                        <constraint firstItem="9yX-bT-S7f" firstAttribute="centerY" secondItem="2FG-ym-609" secondAttribute="centerY" id="4lo-g0-r6J"/>
                                         <constraint firstAttribute="centerY" secondItem="ggs-2e-1ia" secondAttribute="centerY" id="77R-u0-nyh"/>
                                         <constraint firstItem="9yX-bT-S7f" firstAttribute="leading" secondItem="bXM-4A-0DO" secondAttribute="leading" id="7D0-1K-t23"/>
                                         <constraint firstItem="9yX-bT-S7f" firstAttribute="leading" secondItem="i1e-vo-cGu" secondAttribute="leading" id="AD7-gb-8Qm"/>
+                                        <constraint firstItem="2FG-ym-609" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9yX-bT-S7f" secondAttribute="trailing" priority="750" constant="4" id="CYb-9T-ydP"/>
                                         <constraint firstItem="9yX-bT-S7f" firstAttribute="top" secondItem="etC-au-M35" secondAttribute="top" constant="4" id="G5t-Um-Gre"/>
                                         <constraint firstItem="ggs-2e-1ia" firstAttribute="leading" secondItem="etC-au-M35" secondAttribute="leading" constant="4" id="Hdw-cu-qjc"/>
                                         <constraint firstItem="9yX-bT-S7f" firstAttribute="leading" secondItem="etC-au-M35" secondAttribute="leading" constant="52" id="MtV-93-A9p"/>
                                         <constraint firstItem="i1e-vo-cGu" firstAttribute="top" secondItem="9yX-bT-S7f" secondAttribute="bottom" constant="1" id="Qc9-mM-ssn"/>
-                                        <constraint firstAttribute="trailing" secondItem="9yX-bT-S7f" secondAttribute="trailing" constant="4" id="ac8-RJ-fVb"/>
+                                        <constraint firstAttribute="trailing" secondItem="2FG-ym-609" secondAttribute="trailing" constant="8" id="V01-t5-iLA"/>
                                         <constraint firstItem="bXM-4A-0DO" firstAttribute="top" secondItem="i1e-vo-cGu" secondAttribute="bottom" constant="1" id="lLg-bv-QKe"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bXM-4A-0DO" secondAttribute="trailing" constant="4" id="tbD-hn-5su"/>
                                     </constraints>
@@ -236,24 +246,24 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="658" verticalHuggingPriority="669" horizontalCompressionResistancePriority="641" verticalCompressionResistancePriority="628" text="VERY LONG Event Name VERY LONG Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeT-VM-14B">
                                             <rect key="frame" x="52" y="4" width="243" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-9B-tNb">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Course Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-9B-tNb">
                                             <rect key="frame" x="52" y="25" width="248" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" ambiguous="YES" misplaced="YES" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R5-afb">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="710" verticalCompressionResistancePriority="706" misplaced="YES" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-R5-afb">
                                             <rect key="frame" x="52" y="43" width="230" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.49999999999999994" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-Nb-qI1" customClass="NRLabel">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.49999999999999994" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-Nb-qI1" customClass="NRLabel">
                                             <rect key="frame" x="284" y="45" width="32" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.97155230978260865" green="0.091334813820915711" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -298,12 +308,12 @@
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="top" secondItem="Fb8-Qz-0vS" secondAttribute="top" constant="4" id="Ugc-Ah-gAv"/>
                                         <constraint firstItem="WeT-VM-14B" firstAttribute="leading" secondItem="4JO-R5-afb" secondAttribute="leading" id="W76-Jk-nZx"/>
                                         <constraint firstItem="4JO-R5-afb" firstAttribute="centerY" secondItem="FMu-Nb-qI1" secondAttribute="centerY" id="XD2-8L-4AK"/>
-                                        <constraint firstItem="FMu-Nb-qI1" firstAttribute="leading" secondItem="4JO-R5-afb" secondAttribute="trailing" constant="2" id="XUd-58-a0M"/>
+                                        <constraint firstItem="FMu-Nb-qI1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4JO-R5-afb" secondAttribute="trailing" priority="750" constant="2" id="XUd-58-a0M"/>
                                         <constraint firstAttribute="trailing" secondItem="oIh-VZ-amo" secondAttribute="trailing" constant="8" id="Xon-g9-Zoy"/>
                                         <constraint firstAttribute="trailing" secondItem="Ja6-9B-tNb" secondAttribute="trailing" constant="20" id="bAi-vX-Vr9"/>
                                         <constraint firstAttribute="trailing" secondItem="FMu-Nb-qI1" secondAttribute="trailing" constant="8" id="cNf-jI-r8m"/>
                                         <constraint firstItem="oIh-VZ-amo" firstAttribute="centerY" secondItem="WeT-VM-14B" secondAttribute="centerY" id="jj0-wD-McS"/>
-                                        <constraint firstItem="oIh-VZ-amo" firstAttribute="leading" secondItem="WeT-VM-14B" secondAttribute="trailing" constant="4" id="kA3-gl-q9k"/>
+                                        <constraint firstItem="oIh-VZ-amo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WeT-VM-14B" secondAttribute="trailing" priority="750" constant="4" id="kA3-gl-q9k"/>
                                         <constraint firstItem="Svm-ks-O4v" firstAttribute="leading" secondItem="Fb8-Qz-0vS" secondAttribute="leading" constant="4" id="rh4-zF-v7a"/>
                                         <constraint firstItem="Ja6-9B-tNb" firstAttribute="top" secondItem="WeT-VM-14B" secondAttribute="bottom" constant="1" id="wu6-S3-S36"/>
                                     </constraints>

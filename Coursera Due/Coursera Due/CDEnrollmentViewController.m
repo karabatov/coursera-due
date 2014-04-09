@@ -46,7 +46,7 @@
     CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
     newCell.eventNameLabel.text = event.eventSummary;
     newCell.dueDateLabel.text = [self.dateFormatter relativeStringFromDateIfPossible:event.endDate];
-    newCell.courseNameLabel.text = event.courseId.topicId.name;
+    newCell.courseNameLabel.text = [NSString stringWithFormat:@"🎓 %@", event.courseId.topicId.name];
     NSLog(@"event.isHardDeadline = %@", event.isHardDeadline);
     if ((nil != event.isHardDeadline) && ([event.isHardDeadline isEqualToNumber:@1])) {
         newCell.deadlineTypeLabel.text = @"DEADLINE";
