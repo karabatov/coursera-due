@@ -72,6 +72,9 @@
     NSLog(@"Session startDate: %@", event.courseId.sessionId.startDate);
     NSLog(@"Session endDate: %@", [self.dateFormatter stringFromDate:event.courseId.sessionId.endDate]);
     NSLog(@"Session startStatus: %@", event.courseId.sessionId.startStatus);
+    NSLog(@"Event description: %@", event.eventDescription);
+    NSLog(@"Event status: %@", event.eventStatus);
+    NSLog(@"Event summary: %@", event.eventSummary);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

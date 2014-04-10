@@ -47,6 +47,10 @@
 		D136B6FD18F5B8A200DBD780 /* scholarhat-small.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6FB18F5B8A200DBD780 /* scholarhat-small.png */; };
 		D136B6FE18F5B8A200DBD780 /* scholarhat-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D136B6FC18F5B8A200DBD780 /* scholarhat-small@2x.png */; };
 		D16DFC1D189E5F6800BB1469 /* Enrollment.m in Sources */ = {isa = PBXBuildFile; fileRef = D16DFC1C189E5F6800BB1469 /* Enrollment.m */; };
+		D19A45F718F6CFE80081401A /* CDHomeworkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D19A45F618F6CFE80081401A /* CDHomeworkDetailViewController.m */; };
+		D19A45FA18F6D53B0081401A /* scholarhat-white-small.png in Resources */ = {isa = PBXBuildFile; fileRef = D19A45F818F6D53A0081401A /* scholarhat-white-small.png */; };
+		D19A45FB18F6D53B0081401A /* scholarhat-white-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D19A45F918F6D53A0081401A /* scholarhat-white-small@2x.png */; };
+		D19A45FD18F6E1710081401A /* coursera-large.png in Resources */ = {isa = PBXBuildFile; fileRef = D19A45FC18F6E1710081401A /* coursera-large.png */; };
 		D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */; };
 		D1B2FBA3189BDE8C00E9FFB8 /* CDCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */; };
 		D1B2FBAC189BF68000E9FFB8 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B2FBAB189BF68000E9FFB8 /* Event.m */; };
@@ -125,6 +129,11 @@
 		D136B6FC18F5B8A200DBD780 /* scholarhat-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scholarhat-small@2x.png"; sourceTree = "<group>"; };
 		D16DFC1B189E5F6800BB1469 /* Enrollment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enrollment.h; path = Model/Enrollment.h; sourceTree = "<group>"; };
 		D16DFC1C189E5F6800BB1469 /* Enrollment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enrollment.m; path = Model/Enrollment.m; sourceTree = "<group>"; };
+		D19A45F518F6CFE80081401A /* CDHomeworkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHomeworkDetailViewController.h; sourceTree = "<group>"; };
+		D19A45F618F6CFE80081401A /* CDHomeworkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHomeworkDetailViewController.m; sourceTree = "<group>"; };
+		D19A45F818F6D53A0081401A /* scholarhat-white-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scholarhat-white-small.png"; sourceTree = "<group>"; };
+		D19A45F918F6D53A0081401A /* scholarhat-white-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scholarhat-white-small@2x.png"; sourceTree = "<group>"; };
+		D19A45FC18F6E1710081401A /* coursera-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coursera-large.png"; sourceTree = "<group>"; };
 		D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEnrollmentViewController.h; sourceTree = "<group>"; };
 		D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDEnrollmentViewController.m; sourceTree = "<group>"; };
 		D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCourseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -223,6 +232,8 @@
 				D136B6DD18F43EA800DBD780 /* NSDateFormatter+RelativeDateFormat.m */,
 				D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */,
 				D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */,
+				D19A45F518F6CFE80081401A /* CDHomeworkDetailViewController.h */,
+				D19A45F618F6CFE80081401A /* CDHomeworkDetailViewController.m */,
 				D136B6D918EAE2BB00DBD780 /* NRLabel.h */,
 				D136B6DA18EAE2BB00DBD780 /* NRLabel.m */,
 				D1B2FBA1189BDA7D00E9FFB8 /* CDCourseViewController.h */,
@@ -275,6 +286,7 @@
 			children = (
 				D136B6DF18F5B26300DBD780 /* calendar.png */,
 				D136B6E018F5B26300DBD780 /* calendar@2x.png */,
+				D19A45FC18F6E1710081401A /* coursera-large.png */,
 				D136B6E118F5B26300DBD780 /* courses.png */,
 				D136B6E218F5B26300DBD780 /* courses@2x.png */,
 				D136B6E318F5B26300DBD780 /* list.png */,
@@ -283,6 +295,8 @@
 				D136B6F818F5B5AB00DBD780 /* scholarhat@2x.png */,
 				D136B6FB18F5B8A200DBD780 /* scholarhat-small.png */,
 				D136B6FC18F5B8A200DBD780 /* scholarhat-small@2x.png */,
+				D19A45F818F6D53A0081401A /* scholarhat-white-small.png */,
+				D19A45F918F6D53A0081401A /* scholarhat-white-small@2x.png */,
 				D136B6E518F5B26300DBD780 /* settings.png */,
 				D136B6E618F5B26300DBD780 /* settings@2x.png */,
 				D136B6E718F5B26300DBD780 /* suitcase.png */,
@@ -406,12 +420,15 @@
 				D136B6E918F5B26300DBD780 /* calendar.png in Resources */,
 				D136B6EC18F5B26300DBD780 /* courses@2x.png in Resources */,
 				D136B6D718EADE7700DBD780 /* disclosure@2x.png in Resources */,
+				D19A45FA18F6D53B0081401A /* scholarhat-white-small.png in Resources */,
+				D19A45FD18F6E1710081401A /* coursera-large.png in Resources */,
 				D136B6FD18F5B8A200DBD780 /* scholarhat-small.png in Resources */,
 				D123BE10188FBD38004F2839 /* Main_iPhone.storyboard in Resources */,
 				D136B6F018F5B26300DBD780 /* settings@2x.png in Resources */,
 				D136B6D818EADE7700DBD780 /* disclosure.png in Resources */,
 				D123BE07188FBD38004F2839 /* InfoPlist.strings in Resources */,
 				D136B6F118F5B26300DBD780 /* suitcase.png in Resources */,
+				D19A45FB18F6D53B0081401A /* scholarhat-white-small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +486,7 @@
 				D136B6DE18F43EA800DBD780 /* NSDateFormatter+RelativeDateFormat.m in Sources */,
 				D136795B1899534300B1B0A3 /* CDEnrollmentCell.m in Sources */,
 				D136B6DB18EAE2BB00DBD780 /* NRLabel.m in Sources */,
+				D19A45F718F6CFE80081401A /* CDHomeworkDetailViewController.m in Sources */,
 				D13679581896E0D500B1B0A3 /* CDRootViewController.m in Sources */,
 				D1B2FB9E189BACF000E9FFB8 /* CDEnrollmentViewController.m in Sources */,
 				D13679551896DFED00B1B0A3 /* CDPageContentViewController.m in Sources */,

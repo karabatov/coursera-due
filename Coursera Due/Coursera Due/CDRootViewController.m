@@ -57,7 +57,7 @@
                                                      name:@"UserLoggedIn"
                                                    object:nil];
     } else {
-        [[CDNetworkDataLoader sharedLoader] getDataInBackground];
+        //[[CDNetworkDataLoader sharedLoader] getDataInBackground];
         [self showMainScreen];
     }
 }
