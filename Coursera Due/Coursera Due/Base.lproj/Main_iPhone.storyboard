@@ -339,7 +339,7 @@
                                     <outlet property="deadlineTypeLabel" destination="FMu-Nb-qI1" id="gIK-G2-U6b"/>
                                     <outlet property="dueDateLabel" destination="4JO-R5-afb" id="66P-2l-m2c"/>
                                     <outlet property="eventNameLabel" destination="WeT-VM-14B" id="xyw-vq-uj9"/>
-                                    <segue destination="MuP-we-Hrp" kind="push" id="DM7-Zx-FIj"/>
+                                    <segue destination="MuP-we-Hrp" kind="push" identifier="HomeworkDetails" id="DM7-Zx-FIj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -379,7 +379,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <view opaque="NO" clipsSubviews="YES" alpha="0.89999999999999991" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aYi-OS-C9L">
-                                                    <rect key="frame" x="0.0" y="20" width="320" height="160"/>
+                                                    <rect key="frame" x="0.0" y="30" width="320" height="140"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Computer networks Computer networksComputer networksComputer networksComputer networks" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="dJ8-RG-gMO" customClass="NRLabel">
@@ -431,11 +431,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="aYi-OS-C9L" secondAttribute="trailing" id="Puo-8L-9kw"/>
                                                 <constraint firstItem="jZn-00-CrE" firstAttribute="leading" secondItem="DqC-a1-nwT" secondAttribute="leading" id="bbV-nC-6OY"/>
                                                 <constraint firstItem="aYi-OS-C9L" firstAttribute="leading" secondItem="DqC-a1-nwT" secondAttribute="leading" id="dWl-cl-wjd"/>
-                                                <constraint firstItem="aYi-OS-C9L" firstAttribute="top" secondItem="DqC-a1-nwT" secondAttribute="top" constant="20" id="fLf-az-LMd"/>
+                                                <constraint firstItem="aYi-OS-C9L" firstAttribute="top" secondItem="DqC-a1-nwT" secondAttribute="top" constant="30" id="fLf-az-LMd"/>
                                                 <constraint firstAttribute="trailing" secondItem="jZn-00-CrE" secondAttribute="trailing" id="rN7-kE-ZSg"/>
                                                 <constraint firstItem="jZn-00-CrE" firstAttribute="top" secondItem="DqC-a1-nwT" secondAttribute="top" id="ui4-iI-TSq"/>
                                                 <constraint firstAttribute="centerX" secondItem="aYi-OS-C9L" secondAttribute="centerX" id="vZp-mk-e3E"/>
-                                                <constraint firstAttribute="bottom" secondItem="aYi-OS-C9L" secondAttribute="bottom" constant="20" id="wge-mg-OBC"/>
+                                                <constraint firstAttribute="bottom" secondItem="aYi-OS-C9L" secondAttribute="bottom" constant="30" id="wge-mg-OBC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
@@ -447,8 +447,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JuZ-5g-iCX" customClass="NRLabel">
-                                                    <rect key="frame" x="108" y="24" width="50" height="22"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JuZ-5g-iCX" customClass="NRLabel">
+                                                    <rect key="frame" x="70" y="24" width="50" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.97155230979999996" green="0.091334813819999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -460,36 +460,40 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="April 17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-Kh-vLg" customClass="NRLabel">
-                                                    <rect key="frame" x="162" y="15" width="74" height="26"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="April 17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-Kh-vLg" customClass="NRLabel">
+                                                    <rect key="frame" x="150" y="15" width="74" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="03:28 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khj-Wl-Mvd" customClass="NRLabel">
-                                                    <rect key="frame" x="162" y="43" width="78" height="12"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:28 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khj-Wl-Mvd" customClass="NRLabel">
+                                                    <rect key="frame" x="148" y="43" width="78" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf0-nC-7Xf" userLabel="Pixel Guide">
-                                                    <rect key="frame" x="160" y="35" width="0.0" height="0.0"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wf0-nC-7Xf" userLabel="Pixel Guide">
+                                                    <rect key="frame" x="130" y="35" width="0.0" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" id="CPx-ov-04g"/>
+                                                        <constraint firstAttribute="height" id="iLa-8f-UMr"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="wf0-nC-7Xf" secondAttribute="centerX" id="36t-GX-o8u"/>
-                                                <constraint firstItem="khj-Wl-Mvd" firstAttribute="leading" secondItem="TrA-Kh-vLg" secondAttribute="leading" id="9fz-8h-Moz"/>
+                                                <constraint firstAttribute="centerX" secondItem="wf0-nC-7Xf" secondAttribute="centerX" constant="30" id="36t-GX-o8u"/>
                                                 <constraint firstAttribute="centerY" secondItem="JuZ-5g-iCX" secondAttribute="centerY" id="CV7-mK-htC"/>
                                                 <constraint firstAttribute="centerY" secondItem="wf0-nC-7Xf" secondAttribute="centerY" id="K8F-0r-Iqi"/>
                                                 <constraint firstItem="khj-Wl-Mvd" firstAttribute="top" secondItem="TrA-Kh-vLg" secondAttribute="bottom" constant="2" id="V3e-sx-QF5"/>
-                                                <constraint firstItem="wf0-nC-7Xf" firstAttribute="leading" secondItem="JuZ-5g-iCX" secondAttribute="trailing" constant="2" id="VPG-mt-jLz"/>
+                                                <constraint firstItem="wf0-nC-7Xf" firstAttribute="leading" secondItem="JuZ-5g-iCX" secondAttribute="trailing" constant="10" id="VPG-mt-jLz"/>
                                                 <constraint firstAttribute="bottom" secondItem="khj-Wl-Mvd" secondAttribute="bottom" constant="15" id="dNV-2X-Mrm"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TrA-Kh-vLg" secondAttribute="trailing" constant="20" id="eDF-1u-sPO"/>
                                                 <constraint firstItem="TrA-Kh-vLg" firstAttribute="top" secondItem="6ix-kB-vWy" secondAttribute="top" constant="15" id="fNY-ID-nIH"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="khj-Wl-Mvd" secondAttribute="trailing" constant="20" id="kLn-GN-rgR"/>
-                                                <constraint firstItem="TrA-Kh-vLg" firstAttribute="leading" secondItem="wf0-nC-7Xf" secondAttribute="trailing" constant="2" id="q2R-hp-zeD"/>
+                                                <constraint firstItem="khj-Wl-Mvd" firstAttribute="centerX" secondItem="TrA-Kh-vLg" secondAttribute="centerX" id="ozL-Jc-GDL"/>
+                                                <constraint firstItem="TrA-Kh-vLg" firstAttribute="leading" secondItem="wf0-nC-7Xf" secondAttribute="trailing" constant="20" id="q2R-hp-zeD"/>
                                                 <constraint firstItem="JuZ-5g-iCX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6ix-kB-vWy" secondAttribute="leading" constant="20" id="rmn-eQ-Sz6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -507,7 +511,7 @@
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <string key="text">If you submit after the due date (but before the hard deadline), your submission score will be penalized 50%. Note that deadlines are sometimes extended, so check the website for the latest information.
 </string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                 </textView>

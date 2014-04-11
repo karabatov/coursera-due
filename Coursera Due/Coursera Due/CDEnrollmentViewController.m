@@ -16,6 +16,7 @@
 #import "CDEnrollmentCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "NSDateFormatter+RelativeDateFormat.h"
+#import "CDHomeworkDetailViewController.h"
 
 @interface CDEnrollmentViewController ()
 
@@ -58,13 +59,13 @@
     if ((nil != event.isHardDeadline) && ([event.isHardDeadline isEqualToNumber:@1])) {
         newCell.deadlineTypeLabel.text = @"DEADLINE";
         newCell.deadlineTypeLabel.textColor = [UIColor whiteColor];
-        newCell.deadlineTypeLabel.backgroundColor = [UIColor blackColor];
+        newCell.deadlineTypeLabel.backgroundColor = [UIColor lightGrayColor];
         newCell.deadlineTypeLabel.layer.borderWidth = 0.0;
     } else {
         newCell.deadlineTypeLabel.text = @"DUE";
-        newCell.deadlineTypeLabel.textColor = [UIColor blackColor];
+        newCell.deadlineTypeLabel.textColor = [UIColor lightGrayColor];
         newCell.deadlineTypeLabel.backgroundColor = [UIColor clearColor];
-        newCell.deadlineTypeLabel.layer.borderColor = [UIColor blackColor].CGColor;
+        newCell.deadlineTypeLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
         newCell.deadlineTypeLabel.layer.borderWidth = 1.0;
     }
     [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
@@ -75,6 +76,7 @@
     NSLog(@"Event description: %@", event.eventDescription);
     NSLog(@"Event status: %@", event.eventStatus);
     NSLog(@"Event summary: %@", event.eventSummary);
+    NSLog(@"Event id = %@", event.id);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -118,6 +120,40 @@
     //NSLog(@"Cell height = %f", height);
 
     return height;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // unwrap the controller if it's embedded in the nav controller.
+    UIViewController *controller;
+    if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        controller = [navController.viewControllers firstObject];
+    } else {
+        controller = segue.destinationViewController;
+    }
+
+    if ([controller isKindOfClass:[CDHomeworkDetailViewController class]]) {
+        if ([[segue identifier] isEqualToString:@"HomeworkDetails"]) {
+            CDHomeworkDetailViewController *homeworkVC = (CDHomeworkDetailViewController *)controller;
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            homeworkVC.courseName = event.courseId.topicId.name;
+            homeworkVC.homeworkName = event.eventSummary;
+            homeworkVC.isHardDeadline = event.isHardDeadline;
+            [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+            [self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+            homeworkVC.dueDate = [self.dateFormatter stringFromDate:event.endDate];
+            [self.dateFormatter setDateStyle:NSDateFormatterNoStyle];
+            [self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+            homeworkVC.dueTime = [self.dateFormatter stringFromDate:event.endDate];
+            [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+            homeworkVC.homeworkDescription = event.eventDescription;
+            homeworkVC.courseImageURL = event.courseId.topicId.largeIcon;
+        }
+    } else {
+        NSAssert(NO, @"Unknown segue. All segues must be handled.");
+    }
 }
 
 #pragma mark - Fetched results controller

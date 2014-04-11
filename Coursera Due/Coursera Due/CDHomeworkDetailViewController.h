@@ -20,9 +20,10 @@
 
 @property (nonatomic) NSString *courseName;
 @property (nonatomic) NSString *homeworkName;
-@property (nonatomic) BOOL isHardDeadline;
+@property (nonatomic) NSNumber *isHardDeadline;
 @property (nonatomic) NSString *dueDate;
 @property (nonatomic) NSString *dueTime;
 @property (nonatomic) NSString *homeworkDescription;
+@property (nonatomic) NSString *courseImageURL;
 
 @end

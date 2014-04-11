@@ -33,11 +33,23 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    self.courseName = @"Computer Networks";
-    self.homeworkName = @"Final Exam";
-    self.isHardDeadline = YES;
-    self.dueDate = @"April 17";
-    self.dueTime = @"03:28 AM";
+    self.courseLabel.text = self.courseName;
+    self.homeworkLabel.text = self.homeworkName;
+    if ((nil != self.isHardDeadline) && ([self.isHardDeadline isEqualToNumber:@1])) {
+        self.dueLabel.text = @"DEADLINE";
+        self.dueLabel.textColor = [UIColor whiteColor];
+        self.dueLabel.backgroundColor = [UIColor lightGrayColor];
+        self.dueLabel.layer.borderWidth = 0.0;
+    } else {
+        self.dueLabel.text = @"DUE";
+        self.dueLabel.textColor = [UIColor lightGrayColor];
+        self.dueLabel.backgroundColor = [UIColor clearColor];
+        self.dueLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        self.dueLabel.layer.borderWidth = 1.0;
+    }
+    self.descriptionText.text = self.homeworkDescription;
+    [self.descriptionText setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+    [self.courseImage setImageWithURL:[NSURL URLWithString:self.courseImageURL] placeholderImage:[UIImage imageNamed:@"coursera-large.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,21 +71,9 @@
             [self.homeworkLabel setNeedsLayout];
             [self.homeworkLabel layoutIfNeeded];
             height += [self.homeworkLabel systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-            height += 20+20+8+20+20;
+            height += 30+20+8+20+30;
             break;
         case 1:
-            if (self.isHardDeadline) {
-                self.dueLabel.text = @"DEADLINE";
-                self.dueLabel.textColor = [UIColor whiteColor];
-                self.dueLabel.backgroundColor = [UIColor blackColor];
-                self.dueLabel.layer.borderWidth = 0.0;
-            } else {
-                self.dueLabel.text = @"DUE";
-                self.dueLabel.textColor = [UIColor blackColor];
-                self.dueLabel.backgroundColor = [UIColor clearColor];
-                self.dueLabel.layer.borderColor = [UIColor blackColor].CGColor;
-                self.dueLabel.layer.borderWidth = 1.0;
-            }
             self.dateLabel.text = self.dueDate;
             [self.dateLabel setNeedsLayout];
             [self.dateLabel layoutIfNeeded];

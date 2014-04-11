@@ -241,7 +241,7 @@ static CDNetworkDataLoader *sharedLoader = nil;
 
                 while ((i < [eventIds count]) && (j <= [eventsMatching count])){
 
-                    NSLog(@"i = %d, j = %d", i, j);
+                    // NSLog(@"i = %d, j = %d", i, j);
 
                     NSString *eventId = [eventIds objectAtIndex:i];
 
@@ -260,8 +260,8 @@ static CDNetworkDataLoader *sharedLoader = nil;
                         newEvt.endDate = event.eventEndDate;
                         newEvt.createDate = event.eventCreatedDate;
                         newEvt.lastModifiedDate = event.eventLastModifiedDate;
-                        newEvt.eventSummary = event.eventSummary;
-                        newEvt.eventDescription = event.eventDescription;
+                        newEvt.eventSummary = [event.eventSummary stringByReplacingOccurrencesOfString:@"\\," withString:@","];
+                        newEvt.eventDescription = [event.eventDescription stringByReplacingOccurrencesOfString:@"\\," withString:@","];
                         newEvt.eventStatus = event.eventStatus;
                         newEvt.isHardDeadline = nil;
 
@@ -272,6 +272,12 @@ static CDNetworkDataLoader *sharedLoader = nil;
                         }
                         if ([[[newEvt.id componentsSeparatedByString:@"|"] lastObject] isEqualToString:@"hard"]) {
                             newEvt.eventSummary = [newEvt.eventSummary stringByReplacingOccurrencesOfString:@" (Hard Deadline)" withString:@""];
+                            newEvt.isHardDeadline = [NSNumber numberWithBool:YES];
+                        }
+                        if ([[[newEvt.id componentsSeparatedByString:@"|"] lastObject] isEqualToString:@"submission"]) {
+                            newEvt.isHardDeadline = [NSNumber numberWithBool:YES];
+                        }
+                        if ([[[newEvt.id componentsSeparatedByString:@"|"] lastObject] isEqualToString:@"evaluation"]) {
                             newEvt.isHardDeadline = [NSNumber numberWithBool:YES];
                         }
 
