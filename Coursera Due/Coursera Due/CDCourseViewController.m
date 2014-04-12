@@ -59,7 +59,7 @@
     NSSet *filteredSet = [course.eventId filteredSetUsingPredicate:filterPredicate];
     NSDate *endDate = [[[filteredSet sortedArrayUsingDescriptors:@[sortDescriptor]] firstObject] valueForKey:@"endDate"];
     if (endDate != nil) {
-        newCell.dueDateLabel.text = [NSString stringWithFormat:@"Due %@", [self.dateFormatter relativeStringFromDateIfPossible:endDate]];
+        newCell.dueDateLabel.text = [NSString stringWithFormat:@"Due %@", [self.dateFormatter relativeStringFromDateIfPossible:endDate includeTime:YES]];
     } else {
         newCell.dueDateLabel.text = @"Yay, nothing due!";
     }

@@ -10,7 +10,9 @@
 
 @interface NSDateFormatter (RelativeDateFormat)
 
-- (NSString *)relativeStringFromDateIfPossible:(NSDate *)date;
+- (NSString *)relativeStringFromDateIfPossible:(NSDate *)date includeTime:(BOOL)timeFlag;
 - (NSString *)weeksFromDate:(NSDate *)date;
+- (NSString *)stringFromDateOnlyTime:(NSDate *)date;
+- (NSString *)stringFromDateOnlyDate:(NSDate *)date;
 
 @end

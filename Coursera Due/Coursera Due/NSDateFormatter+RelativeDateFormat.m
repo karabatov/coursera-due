@@ -10,7 +10,7 @@
 
 @implementation NSDateFormatter (RelativeDateFormat)
 
-- (NSString *)relativeStringFromDateIfPossible:(NSDate *)date
+- (NSString *)relativeStringFromDateIfPossible:(NSDate *)date includeTime:(BOOL)timeFlag
 {
     static NSDateFormatter *relativeFormatter;
     static NSDateFormatter *absoluteFormatter;
@@ -20,12 +20,10 @@
 
         relativeFormatter = [[NSDateFormatter alloc] init];
         [relativeFormatter setDateStyle:arbitraryStyle];
-        [relativeFormatter setTimeStyle:NSDateFormatterShortStyle];
         [relativeFormatter setDoesRelativeDateFormatting:YES];
 
         absoluteFormatter = [[NSDateFormatter alloc] init];
         [absoluteFormatter setDateStyle:arbitraryStyle];
-        [absoluteFormatter setTimeStyle:NSDateFormatterShortStyle];
         [absoluteFormatter setDoesRelativeDateFormatting:NO];
     }
 
@@ -41,6 +39,14 @@
         [absoluteFormatter setCalendar:calendar];
     }
 
+    if (timeFlag == NO) {
+        [relativeFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [absoluteFormatter setTimeStyle:NSDateFormatterNoStyle];
+    } else {
+        [relativeFormatter setTimeStyle:NSDateFormatterShortStyle];
+        [absoluteFormatter setTimeStyle:NSDateFormatterShortStyle];
+    }
+
     NSString *const maybeRelativeDateString = [relativeFormatter stringFromDate:date];
     const BOOL isRelativeDateString = ![maybeRelativeDateString isEqualToString:[absoluteFormatter stringFromDate:date]];
 
@@ -48,7 +54,11 @@
         return maybeRelativeDateString;
     }
     else {
-        return [self stringFromDate:date];
+        if (timeFlag == NO) {
+            return [self stringFromDateOnlyDate:date];
+        } else {
+            return [self stringFromDate:date];
+        }
     }
 }
 
@@ -76,8 +86,30 @@
             }
         }
     } else {
-        return [self relativeStringFromDateIfPossible:date];
+        return [self relativeStringFromDateIfPossible:date includeTime:NO];
     }
+}
+
+- (NSString *)stringFromDateOnlyTime:(NSDate *)date
+{
+    NSString *oldDateFormat = [self dateFormat];
+    [self setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"hhmm"
+                                                        options:0
+                                                         locale:[NSLocale currentLocale]]];
+    NSString *onlyTime = [self stringFromDate:date];
+    [self setDateFormat:oldDateFormat];
+    return onlyTime;
+}
+
+- (NSString *)stringFromDateOnlyDate:(NSDate *)date
+{
+    NSString *oldDateFormat = [self dateFormat];
+    [self setDateFormat:[NSDateFormatter dateFormatFromTemplate:@"dMMMM"
+                                    options:0
+                                     locale:[NSLocale currentLocale]]];
+    NSString *onlyDate = [self stringFromDate:date];
+    [self setDateFormat:oldDateFormat];
+    return onlyDate;
 }
 
 @end

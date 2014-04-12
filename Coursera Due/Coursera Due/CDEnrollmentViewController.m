@@ -53,7 +53,7 @@
     Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     CDEnrollmentCell *newCell = (CDEnrollmentCell *)cell;
     newCell.eventNameLabel.text = event.eventSummary;
-    newCell.dueDateLabel.text = [self.dateFormatter relativeStringFromDateIfPossible:event.endDate];
+    newCell.dueDateLabel.text = [self.dateFormatter relativeStringFromDateIfPossible:event.endDate includeTime:YES];
     newCell.courseNameLabel.text = event.courseId.topicId.name;
     NSLog(@"event.isHardDeadline = %@", event.isHardDeadline);
     if ((nil != event.isHardDeadline) && ([event.isHardDeadline isEqualToNumber:@1])) {
@@ -141,13 +141,8 @@
             homeworkVC.courseName = event.courseId.topicId.name;
             homeworkVC.homeworkName = event.eventSummary;
             homeworkVC.isHardDeadline = event.isHardDeadline;
-            [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-            [self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-            homeworkVC.dueDate = [self.dateFormatter stringFromDate:event.endDate];
-            [self.dateFormatter setDateStyle:NSDateFormatterNoStyle];
-            [self.dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-            homeworkVC.dueTime = [self.dateFormatter stringFromDate:event.endDate];
-            [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+            homeworkVC.dueDate = [self.dateFormatter relativeStringFromDateIfPossible:event.endDate includeTime:NO];
+            homeworkVC.dueTime = [self.dateFormatter stringFromDateOnlyTime:event.endDate];
             homeworkVC.homeworkDescription = event.eventDescription;
             homeworkVC.courseImageURL = event.courseId.topicId.largeIcon;
         }
