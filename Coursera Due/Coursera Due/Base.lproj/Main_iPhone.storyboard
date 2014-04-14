@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xwr-73-cNd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xwr-73-cNd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -414,7 +414,7 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.24076990927419356" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="DE4-f8-XfH" firstAttribute="top" secondItem="dJ8-RG-gMO" secondAttribute="bottom" constant="8" id="4e8-Z4-doh"/>
                                                         <constraint firstItem="dJ8-RG-gMO" firstAttribute="top" secondItem="aYi-OS-C9L" secondAttribute="top" constant="20" id="Kkp-9S-mD3"/>
@@ -448,7 +448,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="HARD" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JuZ-5g-iCX" customClass="NRLabel">
-                                                    <rect key="frame" x="70" y="24" width="50" height="22"/>
+                                                    <rect key="frame" x="80" y="24" width="50" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.97155230979999996" green="0.091334813819999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -461,20 +461,20 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="April 17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-Kh-vLg" customClass="NRLabel">
-                                                    <rect key="frame" x="150" y="15" width="74" height="26"/>
+                                                    <rect key="frame" x="160" y="15" width="74" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:28 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khj-Wl-Mvd" customClass="NRLabel">
-                                                    <rect key="frame" x="148" y="43" width="78" height="12"/>
+                                                    <rect key="frame" x="158" y="43" width="78" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wf0-nC-7Xf" userLabel="Pixel Guide">
-                                                    <rect key="frame" x="130" y="35" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="140" y="35" width="0.0" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" id="CPx-ov-04g"/>
@@ -483,7 +483,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="wf0-nC-7Xf" secondAttribute="centerX" constant="30" id="36t-GX-o8u"/>
+                                                <constraint firstAttribute="centerX" secondItem="wf0-nC-7Xf" secondAttribute="centerX" constant="20" id="36t-GX-o8u"/>
                                                 <constraint firstAttribute="centerY" secondItem="JuZ-5g-iCX" secondAttribute="centerY" id="CV7-mK-htC"/>
                                                 <constraint firstAttribute="centerY" secondItem="wf0-nC-7Xf" secondAttribute="centerY" id="K8F-0r-Iqi"/>
                                                 <constraint firstItem="khj-Wl-Mvd" firstAttribute="top" secondItem="TrA-Kh-vLg" secondAttribute="bottom" constant="2" id="V3e-sx-QF5"/>
