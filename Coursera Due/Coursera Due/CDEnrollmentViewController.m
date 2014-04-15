@@ -60,13 +60,13 @@
         newCell.deadlineTypeLabel.text = @"DEADLINE";
         newCell.deadlineTypeLabel.textColor = [UIColor whiteColor];
         newCell.deadlineTypeLabel.backgroundColor = [UIColor lightGrayColor];
-        newCell.deadlineTypeLabel.layer.borderWidth = 0.0;
+        newCell.deadlineTypeLabel.layer.borderWidth = 0.0f;
     } else {
         newCell.deadlineTypeLabel.text = @"DUE";
         newCell.deadlineTypeLabel.textColor = [UIColor lightGrayColor];
         newCell.deadlineTypeLabel.backgroundColor = [UIColor clearColor];
         newCell.deadlineTypeLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        newCell.deadlineTypeLabel.layer.borderWidth = 1.0;
+        newCell.deadlineTypeLabel.layer.borderWidth = 0.25f;
     }
     [newCell.courseImage setImageWithURL:[NSURL URLWithString:event.courseId.topicId.largeIcon] placeholderImage:[UIImage imageNamed:@"coursera.png"]];
     NSLog(@"Cell textLabel: %@, Cell detailLabel: %@", newCell.eventNameLabel.text, newCell.dueDateLabel.text);

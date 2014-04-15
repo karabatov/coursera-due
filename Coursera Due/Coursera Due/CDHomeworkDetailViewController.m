@@ -39,13 +39,13 @@
         self.dueLabel.text = @"DEADLINE";
         self.dueLabel.textColor = [UIColor whiteColor];
         self.dueLabel.backgroundColor = [UIColor lightGrayColor];
-        self.dueLabel.layer.borderWidth = 0.0;
+        self.dueLabel.layer.borderWidth = 0.0f;
     } else {
         self.dueLabel.text = @"DUE";
         self.dueLabel.textColor = [UIColor lightGrayColor];
         self.dueLabel.backgroundColor = [UIColor clearColor];
         self.dueLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        self.dueLabel.layer.borderWidth = 1.0;
+        self.dueLabel.layer.borderWidth = 0.25f;
     }
     self.descriptionText.text = self.homeworkDescription;
     [self.descriptionText setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
