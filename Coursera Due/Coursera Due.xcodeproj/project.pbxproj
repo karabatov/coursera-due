@@ -220,30 +220,15 @@
 			children = (
 				D123BE0B188FBD38004F2839 /* CDAppDelegate.h */,
 				D123BE0C188FBD38004F2839 /* CDAppDelegate.m */,
-				D1B3CDB318914BF300613DA7 /* CDOAuthConstants.h */,
-				D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */,
 				D123BE0E188FBD38004F2839 /* Main_iPhone.storyboard */,
 				D123BE11188FBD38004F2839 /* Main_iPad.storyboard */,
-				D13679561896E0D500B1B0A3 /* CDRootViewController.h */,
-				D13679571896E0D500B1B0A3 /* CDRootViewController.m */,
-				D123BE14188FBD38004F2839 /* CDViewController.h */,
-				D123BE15188FBD38004F2839 /* CDViewController.m */,
-				D136B6DC18F43EA800DBD780 /* NSDateFormatter+RelativeDateFormat.h */,
-				D136B6DD18F43EA800DBD780 /* NSDateFormatter+RelativeDateFormat.m */,
-				D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */,
-				D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */,
-				D19A45F518F6CFE80081401A /* CDHomeworkDetailViewController.h */,
-				D19A45F618F6CFE80081401A /* CDHomeworkDetailViewController.m */,
-				D136B6D918EAE2BB00DBD780 /* NRLabel.h */,
-				D136B6DA18EAE2BB00DBD780 /* NRLabel.m */,
-				D1B2FBA1189BDA7D00E9FFB8 /* CDCourseViewController.h */,
-				D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */,
-				D13679591899534300B1B0A3 /* CDEnrollmentCell.h */,
-				D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */,
-				D1B3CDB61891551300613DA7 /* CDNetworkDataLoader.h */,
-				D1B3CDB71891551300613DA7 /* CDNetworkDataLoader.m */,
-				D13679531896DFED00B1B0A3 /* CDPageContentViewController.h */,
-				D13679541896DFED00B1B0A3 /* CDPageContentViewController.m */,
+				D1AC51FF195B4D4C005E9B06 /* Network Data Loader */,
+				D1AC51FD195B4C61005E9B06 /* Root View Controller */,
+				D1AC51FE195B4CC0005E9B06 /* Page Content View (+Login) */,
+				D1AC5201195B4DC7005E9B06 /* Generic Table View Classes */,
+				D1AC5200195B4D73005E9B06 /* Enrollment Tab */,
+				D1AC5202195B4E06005E9B06 /* Courses Tab */,
+				D1AC51FC195B4AC7005E9B06 /* Related */,
 				D136795E18998DBF00B1B0A3 /* Images */,
 				D123BE17188FBD38004F2839 /* Images.xcassets */,
 				D123BE03188FBD38004F2839 /* Supporting Files */,
@@ -307,6 +292,77 @@
 				D136796018998EFF00B1B0A3 /* coursera@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		D1AC51FC195B4AC7005E9B06 /* Related */ = {
+			isa = PBXGroup;
+			children = (
+				D1B3CDB318914BF300613DA7 /* CDOAuthConstants.h */,
+				D1B3CDB418914BF300613DA7 /* CDOAuthConstants.m */,
+				D136B6DC18F43EA800DBD780 /* NSDateFormatter+RelativeDateFormat.h */,
+				D136B6DD18F43EA800DBD780 /* NSDateFormatter+RelativeDateFormat.m */,
+				D136B6D918EAE2BB00DBD780 /* NRLabel.h */,
+				D136B6DA18EAE2BB00DBD780 /* NRLabel.m */,
+			);
+			name = Related;
+			sourceTree = "<group>";
+		};
+		D1AC51FD195B4C61005E9B06 /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13679561896E0D500B1B0A3 /* CDRootViewController.h */,
+				D13679571896E0D500B1B0A3 /* CDRootViewController.m */,
+			);
+			name = "Root View Controller";
+			sourceTree = "<group>";
+		};
+		D1AC51FE195B4CC0005E9B06 /* Page Content View (+Login) */ = {
+			isa = PBXGroup;
+			children = (
+				D13679531896DFED00B1B0A3 /* CDPageContentViewController.h */,
+				D13679541896DFED00B1B0A3 /* CDPageContentViewController.m */,
+			);
+			name = "Page Content View (+Login)";
+			sourceTree = "<group>";
+		};
+		D1AC51FF195B4D4C005E9B06 /* Network Data Loader */ = {
+			isa = PBXGroup;
+			children = (
+				D1B3CDB61891551300613DA7 /* CDNetworkDataLoader.h */,
+				D1B3CDB71891551300613DA7 /* CDNetworkDataLoader.m */,
+			);
+			name = "Network Data Loader";
+			sourceTree = "<group>";
+		};
+		D1AC5200195B4D73005E9B06 /* Enrollment Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2FB9C189BACF000E9FFB8 /* CDEnrollmentViewController.h */,
+				D1B2FB9D189BACF000E9FFB8 /* CDEnrollmentViewController.m */,
+				D19A45F518F6CFE80081401A /* CDHomeworkDetailViewController.h */,
+				D19A45F618F6CFE80081401A /* CDHomeworkDetailViewController.m */,
+			);
+			name = "Enrollment Tab";
+			sourceTree = "<group>";
+		};
+		D1AC5201195B4DC7005E9B06 /* Generic Table View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D123BE14188FBD38004F2839 /* CDViewController.h */,
+				D123BE15188FBD38004F2839 /* CDViewController.m */,
+				D13679591899534300B1B0A3 /* CDEnrollmentCell.h */,
+				D136795A1899534300B1B0A3 /* CDEnrollmentCell.m */,
+			);
+			name = "Generic Table View Classes";
+			sourceTree = "<group>";
+		};
+		D1AC5202195B4E06005E9B06 /* Courses Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2FBA1189BDA7D00E9FFB8 /* CDCourseViewController.h */,
+				D1B2FB9F189BDA6900E9FFB8 /* CDCourseViewController.m */,
+			);
+			name = "Courses Tab";
 			sourceTree = "<group>";
 		};
 		D1B3CD8E188FF75700613DA7 /* Model */ = {

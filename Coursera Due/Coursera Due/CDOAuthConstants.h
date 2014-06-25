@@ -8,5 +8,5 @@
 
 @import Foundation;
 
-extern NSString* const kClientId;
-extern NSString* const kClientSecret;
+extern NSString * const kClientId;
+extern NSString * const kClientSecret;

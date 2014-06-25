@@ -1,5 +1,5 @@
 PODS:
-  - AFNetworking (1.3.3)
+  - AFNetworking (1.3.4)
   - AFOAuth2Client (0.1.2):
     - AFNetworking (~> 1.3)
   - ISO8601DateFormatterValueTransformer (0.5.0):
@@ -40,14 +40,14 @@ EXTERNAL SOURCES:
     :path: ~/Dropbox/Documents/Programming/iOS/MXLCalendarManager
 
 SPEC CHECKSUMS:
-  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
-  AFOAuth2Client: 579d6f298b0047dfd5a6eec6ab5b28c01f6b4547
-  ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
+  AFOAuth2Client: 4f05d29e0a26c7ddf529dd7c4480af6ee1e982c6
+  ISO8601DateFormatterValueTransformer: a7e1ecf4380d0b561306ced1a3f01bd5f65d2213
   MXLCalendarManager: 8b38a673cd5b5a991fe43acb204ff243cbe78d07
-  OLGhostAlertView: 9dc999eea3544d91388d4a6cb225dafd70b421e3
-  RestKit: dc107a0aa4f962575ad0385bac5b3c5e4f591f4e
-  RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
-  SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
-  TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
+  OLGhostAlertView: 8b963aacbce7b26c0d552743dd3a15ee568c16b8
+  RestKit: 6b82f862848cbe026ddc297985aa9a766b7e1a38
+  RKValueTransformers: 994503e34bffdbe0159ff6b497290dd1f8d5657f
+  SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
+  TransitionKit: 7877021649a734f3239ed176b7967de29321dcf3
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.33.1
